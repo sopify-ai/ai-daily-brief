@@ -151,7 +151,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
     # === 金句 ===
     quote = brief.get("quote", "")
     if quote:
-        content += f"### 💬 一句话\n\n"
+        content += f"### 💡 今日洞察\n\n"
         content += f"> {quote}\n\n"
         content += "---\n\n"
 
