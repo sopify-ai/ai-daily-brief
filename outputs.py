@@ -56,6 +56,21 @@ def _source_badge(source: str) -> str:
     return f"`{source}`"
 
 
+def _truncate_title(title: str, max_len: int = 80) -> str:
+    """Truncate long titles (e.g., GitHub repo descriptions)."""
+    # Strip GitHub-style "owner/repo: long description" to just the meaningful part
+    if ": " in title and "/" in title.split(": ")[0]:
+        parts = title.split(": ", 1)
+        repo_name = parts[0]
+        desc = parts[1]
+        if len(desc) > max_len - len(repo_name) - 2:
+            desc = desc[:max_len - len(repo_name) - 5] + "..."
+        return f"{repo_name}: {desc}"
+    if len(title) > max_len:
+        return title[:max_len - 3] + "..."
+    return title
+
+
 def _format_related(item: dict) -> str:
     """Format related sources as inline links."""
     related = item.get("related_sources", [])
@@ -89,7 +104,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
         focus_item = candidates[focus_idx]
         star = _importance_star(focus_item)
         content += f"### 📌 今日焦点\n\n"
-        content += f"**[{focus_item['title']}]({focus_item['url']})** · `{focus_item['source']}`{star}\n\n"
+        content += f"**[{_truncate_title(focus_item['title'])}]({focus_item['url']})** · `{focus_item['source']}`{star}\n\n"
         content += f"> {focus.get('editorial', '')}\n\n"
         content += _format_related(focus_item)
         content += "\n---\n\n"
@@ -105,7 +120,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
                 editorial = hl.get("editorial", "")
                 star = _importance_star(item)
 
-                content += f"**{num}. [{item['title']}]({item['url']})** · `{item['source']}`{star}\n\n"
+                content += f"**{num}. [{_truncate_title(item['title'])}]({item['url']})** · `{item['source']}`{star}\n\n"
                 if editorial:
                     content += f"{editorial}\n\n"
                 related_text = _format_related(item)
@@ -113,16 +128,20 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
                     content += related_text
         content += "---\n\n"
 
-    # === 今日工具 ===
+    # === 今日工具 (skip items already in focus/highlights) ===
     tools = brief.get("tools", [])
-    if tools:
+    used_indices = {focus.get("index", -1)}
+    for hl in highlights:
+        used_indices.add(hl.get("index", -1))
+    tools_to_show = [t for t in tools if t.get("index", -1) not in used_indices]
+    if tools_to_show:
         content += f"### 🛠️ 今日工具\n\n"
-        for tool in tools:
+        for tool in tools_to_show:
             idx = tool.get("index", 0)
             if idx < len(candidates):
                 item = candidates[idx]
                 reason = tool.get("reason", "")
-                content += f"**[{item['title']}]({item['url']})** · `{item['source']}`\n\n"
+                content += f"**[{_truncate_title(item['title'])}]({item['url']})** · `{item['source']}`\n\n"
                 if reason:
                     content += f"{reason}\n\n"
         content += "---\n\n"
@@ -135,10 +154,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
         content += "---\n\n"
 
     # === 延伸阅读 (remaining candidates not selected) ===
-    selected_indices = set()
-    selected_indices.add(focus.get("index", -1))
-    for hl in highlights:
-        selected_indices.add(hl.get("index", -1))
+    selected_indices = set(used_indices)
     for tool in tools:
         selected_indices.add(tool.get("index", -1))
 
@@ -150,7 +166,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
         content += f"### 📎 延伸阅读\n\n"
         for i, item in remaining[:10]:
             cat_emoji = CATEGORY_EMOJI.get(item.get("category", ""), "•")
-            content += f"- {cat_emoji} [{item['title']}]({item['url']}) · `{item['source']}`\n"
+            content += f"- {cat_emoji} [{_truncate_title(item['title'])}]({item['url']}) · `{item['source']}`\n"
         content += "\n"
 
     # Stats footer
