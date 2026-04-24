@@ -92,7 +92,7 @@ def create_client(config: dict) -> OpenAI:
 def _run_stage1(items: list[NewsItem], config: dict) -> list[dict]:
     """Stage 1: Score, classify, and assign topic keys."""
     client = create_client(config)
-    model = os.environ.get("AI_NEWS_MODEL", config.get("model", "gpt-4o-mini"))
+    model = os.environ.get("AI_NEWS_MODEL", config.get("model", "gpt-5.4"))
     scored = []
     batch_size = 20
 
@@ -196,7 +196,7 @@ def _cluster_and_select_candidates(scored: list[dict], max_candidates: int = 20)
 def _run_stage2(candidates: list[dict], config: dict) -> dict:
     """Stage 2: Editor-in-chief curation."""
     client = create_client(config)
-    model = os.environ.get("AI_NEWS_MODEL", config.get("model", "gpt-4o-mini"))
+    model = os.environ.get("AI_NEWS_MODEL", config.get("model", "gpt-5.4"))
 
     candidate_text = "\n".join(
         f"[{i}] {item['title']} | source={item['source']} | score={item['score']} | "

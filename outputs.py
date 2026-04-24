@@ -33,6 +33,10 @@ BRIEF_HEADER = """# 🤖 AI Daily Brief
 BRIEF_FOOTER = """
 ---
 
+## 📊 数据概览
+
+{stats_line}
+
 ## 📚 往期简报
 
 查看 [archives/](./archives/) 目录浏览历史简报。
@@ -61,7 +65,12 @@ def _format_related(item: dict) -> str:
     return f"  📎 延伸: {links}\n"
 
 
-def format_daily_brief(curation_result: dict, config: dict) -> str:
+def _importance_star(item: dict, threshold: int = 9) -> str:
+    """Show ⭐ only for high-importance items."""
+    return " ⭐" if item.get("importance", 0) >= threshold else ""
+
+
+def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict = None) -> str:
     """Generate daily brief README content."""
     candidates = curation_result["candidates"]
     brief = curation_result["brief"]
@@ -78,37 +87,31 @@ def format_daily_brief(curation_result: dict, config: dict) -> str:
     focus_idx = focus.get("index", 0)
     if focus_idx < len(candidates):
         focus_item = candidates[focus_idx]
-        cat_emoji = CATEGORY_EMOJI.get(focus_item.get("category", ""), "📌")
+        star = _importance_star(focus_item)
         content += f"### 📌 今日焦点\n\n"
-        content += f"**[{focus_item['title']}]({focus_item['url']})** "
-        content += f"{_source_badge(focus_item['source'])}"
-        if focus_item["score"] > 0:
-            content += f" ⭐{focus_item['score']}"
-        content += "\n\n"
+        content += f"**[{focus_item['title']}]({focus_item['url']})** · `{focus_item['source']}`{star}\n\n"
         content += f"> {focus.get('editorial', '')}\n\n"
         content += _format_related(focus_item)
-        content += "\n"
+        content += "\n---\n\n"
 
     # === 热点速览 ===
     highlights = brief.get("highlights", [])
     if highlights:
         content += f"### 🔥 热点速览\n\n"
-        for hl in highlights:
+        for num, hl in enumerate(highlights, 1):
             idx = hl.get("index", 0)
             if idx < len(candidates):
                 item = candidates[idx]
-                cat_emoji = CATEGORY_EMOJI.get(item.get("category", ""), "•")
                 editorial = hl.get("editorial", "")
-                score_text = f" ⭐{item['score']}" if item["score"] > 0 else ""
+                star = _importance_star(item)
 
-                content += f"- {cat_emoji} **[{item['title']}]({item['url']})** "
-                content += f"{_source_badge(item['source'])}{score_text}\n"
+                content += f"**{num}. [{item['title']}]({item['url']})** · `{item['source']}`{star}\n\n"
                 if editorial:
-                    content += f"  {editorial}\n"
+                    content += f"{editorial}\n\n"
                 related_text = _format_related(item)
                 if related_text:
                     content += related_text
-                content += "\n"
+        content += "---\n\n"
 
     # === 今日工具 ===
     tools = brief.get("tools", [])
@@ -119,17 +122,17 @@ def format_daily_brief(curation_result: dict, config: dict) -> str:
             if idx < len(candidates):
                 item = candidates[idx]
                 reason = tool.get("reason", "")
-                content += f"- **[{item['title']}]({item['url']})** "
-                content += f"{_source_badge(item['source'])}\n"
+                content += f"**[{item['title']}]({item['url']})** · `{item['source']}`\n\n"
                 if reason:
-                    content += f"  {reason}\n"
-                content += "\n"
+                    content += f"{reason}\n\n"
+        content += "---\n\n"
 
     # === 金句 ===
     quote = brief.get("quote", "")
     if quote:
         content += f"### 💬 一句话\n\n"
         content += f"> {quote}\n\n"
+        content += "---\n\n"
 
     # === 延伸阅读 (remaining candidates not selected) ===
     selected_indices = set()
@@ -147,10 +150,25 @@ def format_daily_brief(curation_result: dict, config: dict) -> str:
         content += f"### 📎 延伸阅读\n\n"
         for i, item in remaining[:10]:
             cat_emoji = CATEGORY_EMOJI.get(item.get("category", ""), "•")
-            content += f"- {cat_emoji} [{item['title']}]({item['url']}) {_source_badge(item['source'])}\n"
+            content += f"- {cat_emoji} [{item['title']}]({item['url']}) · `{item['source']}`\n"
         content += "\n"
 
-    content += BRIEF_FOOTER
+    # Stats footer
+    if pipeline_stats:
+        gen_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        stats_line = (
+            f"| 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |\n"
+            f"|:---:|:---:|:---:|:---:|:---:|\n"
+            f"| {pipeline_stats.get('sources', '?')} 源 | "
+            f"{pipeline_stats.get('raw', '?')} 篇 | "
+            f"{pipeline_stats.get('filtered', '?')} 篇 | "
+            f"{pipeline_stats.get('scored', '?')} 篇 | "
+            f"**{pipeline_stats.get('selected', '?')} 篇** |\n\n"
+            f"*生成于 {gen_time}*"
+        )
+    else:
+        stats_line = ""
+    content += BRIEF_FOOTER.format(stats_line=stats_line)
     return content
 
 
