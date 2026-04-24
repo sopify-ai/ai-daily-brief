@@ -157,22 +157,13 @@ def build_card(content: str) -> dict:
         if i > 0:
             elements.append({"tag": "hr"})
         body = section["body"]
-        # 延伸阅读: show first 5 items, fold the rest
+        # 延伸阅读: limit to 5 items (webhook cards don't support collapsible)
         if "延伸阅读" in section["title"]:
             body_lines = body.split("\n")
             items = [l for l in body_lines if l.strip().startswith("- ")]
             if len(items) > 5:
-                visible = "\n".join(body_lines[:body_lines.index(items[5])])
-                folded = "\n".join(items[5:])
-                md = f"**{section['title']}**\n\n{visible}"
-                elements.append({"tag": "markdown", "content": md})
-                elements.append({
-                    "tag": "collapsible",
-                    "title": {"tag": "plain_text", "content": f"📎 更多延伸阅读 ({len(items) - 5}条)"},
-                    "is_collapsed": True,
-                    "elements": [{"tag": "markdown", "content": folded}],
-                })
-                continue
+                body = "\n".join(body_lines[:body_lines.index(items[5])])
+                body += f"\n\n*…共 {len(items)} 条，查看完整简报了解更多*"
         md = f"**{section['title']}**\n\n{body}"
         elements.append({"tag": "markdown", "content": md})
 
