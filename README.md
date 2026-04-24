@@ -58,25 +58,33 @@
 ## 🏗️ 工作原理
 
 ```
- DATA SOURCES               PIPELINE                         OUTPUT
- ────────────               ────────                         ──────
-
- HackerNews  ─┐
- GitHub      ─┤         ┌─────────┐    ┌─────────┐    ┌─────────┐
- HuggingFace ─┼────────▶│ Filter  │───▶│ Stage 1 │───▶│ Stage 2 │───▶ daily-brief.md
- ruanyf      ─┤         │ & Dedup │    │ Score & │    │ Editor  │    archives/
- Reddit      ─┤         │ ~150    │    │ Cluster │    │ Curate  │
- RSS (x9)    ─┘         └─────────┘    └─────────┘    └─────────┘
-                           ~80 items     ~20 cands      10 picks
+┌── 数据采集 · 6 源并发
+│
+│   HackerNews · GitHub · HuggingFace
+│   阮一峰周刊 · Reddit · RSS (x9)
+│   ⇣ 约 150 条/天
+│
+├──▶ 过滤去重
+│
+│    关键词白名单 + 黑名单
+│    48h 时效过滤 + URL 去重
+│    ⇣ 约 80 条
+│
+├──▶ Stage 1: 打分聚类 (LLM)
+│
+│    importance 评分 1-10
+│    分类 + topic_key 聚合
+│    来源多样性约束: 单源 ≤5 条
+│    ⇣ 20 候选
+│
+├──▶ Stage 2: 主编选稿 (LLM)
+│
+│    选焦点 + 写编辑评论
+│    推荐工具 + 提炼金句
+│    ⇣ 10 精选
+│
+└──▶ daily-brief.md + archives/
 ```
-
-### 两阶段策展
-
-| 阶段 | 模型 | 输入 | 输出 |
-|------|------|------|------|
-| **Stage 1** — 打分分类 | 可配置 (默认 gpt-4o-mini) | ~80 条过滤后条目 | importance 分 + category + topic_key |
-| **聚类** | 本地逻辑 | 带 topic_key 的条目 | 同话题合并，源多样性约束，Top 20 候选 |
-| **Stage 2** — 主编选稿 | 可配置 (默认 gpt-4o) | 20 条候选 | 焦点 + 速览 + 工具 + 金句 + 编辑观点 |
 
 ---
 
@@ -162,7 +170,7 @@ python main.py --dry-run
 
 仓库已配置 GitHub Actions 自动运行：
 
-- **定时**: 每天 08:00 UTC (北京时间 16:00)
+- **定时**: 每天 00:00 UTC (北京时间 08:00)
 - **手动触发**: Actions → Daily News → Run workflow
 
 ### 配置 Secrets
