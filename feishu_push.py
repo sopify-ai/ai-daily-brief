@@ -156,15 +156,7 @@ def build_card(content: str) -> dict:
     for i, section in enumerate(sections):
         if i > 0:
             elements.append({"tag": "hr"})
-        body = section["body"]
-        # 延伸阅读: limit to 5 items (webhook cards don't support collapsible)
-        if "延伸阅读" in section["title"]:
-            body_lines = body.split("\n")
-            items = [l for l in body_lines if l.strip().startswith("- ")]
-            if len(items) > 5:
-                body = "\n".join(body_lines[:body_lines.index(items[5])])
-                body += f"\n\n*…共 {len(items)} 条，查看完整简报了解更多*"
-        md = f"**{section['title']}**\n\n{body}"
+        md = f"**{section['title']}**\n\n{section['body']}"
         elements.append({"tag": "markdown", "content": md})
 
     # Truncate content sections if oversized (~30KB limit), before adding footer
