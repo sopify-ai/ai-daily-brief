@@ -156,7 +156,19 @@ def build_card(content: str) -> dict:
     for i, section in enumerate(sections):
         if i > 0:
             elements.append({"tag": "hr"})
-        md = f"**{section['title']}**\n\n{section['body']}"
+        body = section["body"]
+        # 延伸阅读: limit to 5 items, add spacing between items
+        if "延伸阅读" in section["title"]:
+            body_lines = body.split("\n")
+            items = [l for l in body_lines if l.strip().startswith("- ")]
+            total = len(items)
+            if total > 5:
+                body = "\n".join(body_lines[:body_lines.index(items[5])])
+            # Add spacing between list items for readability
+            body = re.sub(r"\n(- )", r"\n\n\1", body)
+            if total > 5:
+                body += f"\n\n*…共 {total} 条，查看完整简报了解更多*"
+        md = f"**{section['title']}**\n\n{body}"
         elements.append({"tag": "markdown", "content": md})
 
     # Truncate content sections if oversized (~30KB limit), before adding footer
