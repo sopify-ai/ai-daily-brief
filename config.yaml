@@ -1,0 +1,126 @@
+# AI News Aggregator Configuration
+
+# LLM settings
+llm:
+  base_url: "https://api.duckcoding.ai/v1"
+  model: "gpt-5.4"               # fast model for Stage 1 (classify/score)
+  model_editorial: "gpt-5.4"    # quality model for Stage 2 (editorial curation)
+  max_tokens: 1024
+  temperature: 0.3
+
+# Data sources
+sources:
+  hackernews:
+    enabled: true
+    top_n: 30                    # fetch top N stories
+    min_score: 50                # minimum HN score
+
+  github_trending:
+    enabled: true
+    languages: ["python", "typescript", "rust", "go"]
+    since: "daily"               # daily | weekly | monthly
+
+  huggingface:
+    enabled: true
+    daily_papers: true
+    trending_models: true
+    top_n: 10
+
+  rss_feeds:
+    enabled: true
+    feeds:
+      - name: "OpenAI Blog"
+        url: "https://openai.com/blog/rss.xml"
+      - name: "Anthropic"
+        url: "https://www.anthropic.com/rss.xml"
+      - name: "Google AI Blog"
+        url: "https://blog.google/technology/ai/rss/"
+      - name: "Hugging Face Blog"
+        url: "https://huggingface.co/blog/feed.xml"
+      - name: "GitHub Blog"
+        url: "https://github.blog/feed/"
+      - name: "The Verge AI"
+        url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+      - name: "TechCrunch AI"
+        url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+      - name: "机器之心"
+        url: "https://www.jiqizhixin.com/rss"
+      - name: "arXiv cs.AI"
+        url: "http://rss.arxiv.org/rss/cs.AI"
+
+  ruanyf_weekly:
+    enabled: true
+    repo: "ruanyf/weekly"
+    max_items: 20                # max links to extract per issue
+
+  reddit:
+    enabled: true
+    subreddits: ["LocalLLaMA"]
+    top_n: 15
+    min_score: 50
+
+# Filtering
+filter:
+  keywords:
+    include:
+      - "ai"
+      - "llm"
+      - "gpt"
+      - "claude"
+      - "gemini"
+      - "copilot"
+      - "machine learning"
+      - "deep learning"
+      - "transformer"
+      - "diffusion"
+      - "agent"
+      - "rag"
+      - "fine-tune"
+      - "embedding"
+      - "huggingface"
+      - "openai"
+      - "anthropic"
+      - "deepseek"
+      - "mistral"
+      - "llama"
+      - "coding assistant"
+      - "code generation"
+      - "大模型"
+      - "量化"
+      - "微调"
+      - "本地部署"
+    exclude:
+      - "crypto"
+      - "nft"
+      - "blockchain"
+  max_age_hours: 48              # only include items from last 48h
+
+# Output settings
+output:
+  github_readme:
+    enabled: true
+    file: "daily-brief.md"         # daily brief output (separate from project README)
+    max_items: 30                # max items in brief
+    archive: true                # archive old entries
+
+  notion:
+    enabled: false               # set true + env vars to enable
+    database_id_env: "NOTION_DATABASE_ID"
+
+  archive:
+    enabled: true
+    directory: "archives"
+    format: "markdown"           # markdown | json
+
+# Categories for grouping
+categories:
+  - name: "🔬 Research & Papers"
+    keywords: ["paper", "arxiv", "research", "benchmark", "dataset"]
+  - name: "🚀 Product & Release"
+    keywords: ["release", "launch", "announce", "update", "version"]
+  - name: "🛠️ Tools & Libraries"
+    keywords: ["github", "library", "framework", "sdk", "tool", "cli"]
+  - name: "💡 Tutorials & Guides"
+    keywords: ["tutorial", "guide", "how to", "introduction", "learn"]
+  - name: "📊 Industry & Business"
+    keywords: ["funding", "acquisition", "partnership", "enterprise"]
