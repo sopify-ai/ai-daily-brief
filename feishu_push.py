@@ -60,6 +60,10 @@ def clean_markdown(text: str) -> str:
     text = re.sub(r"\[!\[.*?\]\(.*?\)\]\(.*?\)", "", text)
     # Remove standalone images: ![alt](url)
     text = re.sub(r"!\[.*?\]\(.*?\)", "", text)
+    # Convert blockquotes to 「」(Feishu cards don't support >)
+    text = re.sub(r"^>\s*(.+)$", r"「\1」", text, flags=re.MULTILINE)
+    # Convert inline code `source` to 「source」for better card readability
+    text = re.sub(r"`([^`]+)`", r"「\1」", text)
     # Convert markdown tables to key:value text
     lines = text.split("\n")
     result = []
@@ -152,9 +156,43 @@ def build_card(content: str) -> dict:
     for i, section in enumerate(sections):
         if i > 0:
             elements.append({"tag": "hr"})
-        md = f"**{section['title']}**\n\n{section['body']}"
+        body = section["body"]
+        # 延伸阅读: show first 5 items, fold the rest
+        if "延伸阅读" in section["title"]:
+            body_lines = body.split("\n")
+            items = [l for l in body_lines if l.strip().startswith("- ")]
+            if len(items) > 5:
+                visible = "\n".join(body_lines[:body_lines.index(items[5])])
+                folded = "\n".join(items[5:])
+                md = f"**{section['title']}**\n\n{visible}"
+                elements.append({"tag": "markdown", "content": md})
+                elements.append({
+                    "tag": "collapsible",
+                    "title": {"tag": "plain_text", "content": f"📎 更多延伸阅读 ({len(items) - 5}条)"},
+                    "is_collapsed": True,
+                    "elements": [{"tag": "markdown", "content": folded}],
+                })
+                continue
+        md = f"**{section['title']}**\n\n{body}"
         elements.append({"tag": "markdown", "content": md})
 
+    # Truncate content sections if oversized (~30KB limit), before adding footer
+    temp_card = {"msg_type": "interactive", "card": {"header": {}, "elements": elements}}
+    card_json = json.dumps(temp_card, ensure_ascii=False)
+    truncated = False
+    while len(card_json.encode("utf-8")) > 24000 and len(elements) > 2:
+        elements.pop(-1)
+        if elements and elements[-1].get("tag") == "hr":
+            elements.pop(-1)
+        truncated = True
+        card_json = json.dumps(temp_card, ensure_ascii=False)
+    if truncated:
+        elements.append({
+            "tag": "note",
+            "elements": [{"tag": "plain_text", "content": "⚠️ 内容已截断，请查看完整简报"}],
+        })
+
+    # Footer: stats note + button (always kept, not subject to truncation)
     if stats:
         elements.append({"tag": "hr"})
         gen_m = re.search(r"\*生成于 (.+?)\*", content)
@@ -186,23 +224,9 @@ def build_card(content: str) -> dict:
         },
     }
 
-    # Check card size (~30KB limit) — truncate if oversized
-    card_json = json.dumps(card, ensure_ascii=False)
-    truncated = False
-    while len(card_json.encode("utf-8")) > 28000 and len(elements) > 2:
-        elements.pop(-1)
-        if elements and elements[-1].get("tag") == "hr":
-            elements.pop(-1)
-        truncated = True
-        card_json = json.dumps(card, ensure_ascii=False)
-    if truncated:
-        elements.append({
-            "tag": "note",
-            "elements": [{"tag": "plain_text", "content": "⚠️ 内容已截断，请查看完整简报"}],
-        })
     card_json = json.dumps(card, ensure_ascii=False)
     if len(card_json.encode("utf-8")) > 28000:
-        print(f"⚠️ Card size {len(card_json.encode('utf-8'))} bytes after truncation, may exceed limit.", file=sys.stderr)
+        print(f"⚠️ Card size {len(card_json.encode('utf-8'))} bytes, may exceed limit.", file=sys.stderr)
 
     return card
 
