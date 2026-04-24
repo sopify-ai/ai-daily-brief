@@ -1,0 +1,24 @@
+name: Feishu Push
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 02:00 UTC = 10:00 Beijing
+  workflow_dispatch:       # Manual trigger
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install httpx
+
+      - name: Push to Feishu
+        run: python feishu_push.py
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_WEBHOOK_SECRET: ${{ secrets.FEISHU_WEBHOOK_SECRET }}

@@ -7,8 +7,10 @@ Generates structured daily briefing in README.md and archive files.
 import os
 import json
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+BEIJING_TZ = timezone(timedelta(hours=8))
 
 logger = logging.getLogger(__name__)
 
@@ -90,9 +92,9 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
     candidates = curation_result["candidates"]
     brief = curation_result["brief"]
     repo = os.environ.get("GITHUB_REPOSITORY", "sopify-ai/ai-daily-brief")
-    date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date = datetime.now(BEIJING_TZ).strftime("%Y-%m-%d")
     weekday_zh = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-    weekday = weekday_zh[datetime.now(timezone.utc).weekday()]
+    weekday = weekday_zh[datetime.now(BEIJING_TZ).weekday()]
 
     content = BRIEF_HEADER.format(repo=repo)
     content += f"## 📅 {date} {weekday}\n\n"
@@ -171,7 +173,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
 
     # Stats footer
     if pipeline_stats:
-        gen_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        gen_time = datetime.now(BEIJING_TZ).strftime("%Y-%m-%d %H:%M UTC+8")
         stats_line = (
             f"| 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |\n"
             f"|:---:|:---:|:---:|:---:|:---:|\n"
@@ -200,9 +202,9 @@ def write_archive(curation_result: dict, config: dict):
         return
 
     directory = config.get("directory", "archives")
-    date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date = datetime.now(BEIJING_TZ).strftime("%Y-%m-%d")
     weekday_zh = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-    weekday = weekday_zh[datetime.now(timezone.utc).weekday()]
+    weekday = weekday_zh[datetime.now(BEIJING_TZ).weekday()]
 
     Path(directory).mkdir(parents=True, exist_ok=True)
 
@@ -210,7 +212,7 @@ def write_archive(curation_result: dict, config: dict):
     brief = curation_result["brief"]
 
     content = f"# AI Daily Brief — {date} {weekday}\n\n"
-    content += f"> Generated at {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n\n"
+    content += f"> Generated at {datetime.now(BEIJING_TZ).strftime('%Y-%m-%d %H:%M CST')}\n\n"
     content += f"候选条目: {len(candidates)} | "
 
     highlights = brief.get("highlights", [])

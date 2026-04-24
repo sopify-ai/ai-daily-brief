@@ -184,6 +184,31 @@ python main.py --dry-run
 
 ---
 
+## 📱 飞书推送（可选）
+
+支持将每日简报以交互卡片推送到飞书群。Fork 用户只需 3 步启用：
+
+### 1. 创建飞书群机器人
+
+群设置 → 群机器人 → 添加机器人 → 自定义机器人 → 复制 Webhook URL
+
+### 2. 设置 GitHub Secret
+
+仓库 Settings → Secrets and variables → Actions → New repository secret：
+
+| Secret | 说明 |
+|--------|------|
+| `FEISHU_WEBHOOK_URL` | Webhook 地址（必需） |
+| `FEISHU_WEBHOOK_SECRET` | 签名密钥（可选，安全加固） |
+
+### 3. 完成
+
+每天 10:00（北京时间）自动推送。也可在 Actions → Feishu Push → Run workflow 手动触发。
+
+> 💡 未设置 `FEISHU_WEBHOOK_URL` 时，workflow 会静默跳过（不影响其他 CI）。
+
+---
+
 ## 📁 项目结构
 
 ```
@@ -192,10 +217,12 @@ ai-daily-brief/
 ├── sources.py           # 6 大数据源采集器
 ├── summarizer.py        # 两阶段 GPT 策展引擎
 ├── outputs.py           # 输出格式化（daily-brief + archive）
+├── feishu_push.py       # 飞书群推送（可选，独立运行）
 ├── config.yaml          # 全量配置
 ├── .env.example         # 环境变量模板
 ├── .github/workflows/
-│   └── daily-news.yml   # GitHub Actions 定时任务
+│   ├── daily-news.yml   # GitHub Actions 定时采集
+│   └── feishu-push.yml  # GitHub Actions 飞书推送
 ├── daily-brief.md       # ← 每日简报输出
 ├── archives/            # ← 历史归档 (YYYY-MM-DD.md)
 └── requirements.txt     # 依赖：openai, httpx, feedparser, pyyaml
