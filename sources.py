@@ -83,6 +83,10 @@ async def fetch_github_trending(config: dict) -> list[NewsItem]:
     since = config.get("since", "daily")
     items = []
 
+    # Repos with very high star counts are "permanent fixtures" — filter them out
+    # to prioritize genuinely new/trending projects
+    max_existing_stars = config.get("max_existing_stars", 50000)
+
     # Use GitHub search API: repos created/pushed recently with many stars
     date_map = {"daily": 1, "weekly": 7, "monthly": 30}
     days = date_map.get(since, 1)
@@ -102,11 +106,15 @@ async def fetch_github_trending(config: dict) -> list[NewsItem]:
                     continue
 
                 for repo in resp.json().get("items", [])[:5]:
+                    stars = repo.get("stargazers_count", 0)
+                    if stars > max_existing_stars:
+                        logger.debug(f"Skipping {repo['full_name']} ({stars} stars) — permanent fixture")
+                        continue
                     items.append(NewsItem(
                         title=f"{repo['full_name']}: {repo.get('description', '')[:100]}",
                         url=repo["html_url"],
                         source="GitHub Trending",
-                        score=repo.get("stargazers_count", 0),
+                        score=stars,
                         published=datetime.fromisoformat(
                             repo["pushed_at"].replace("Z", "+00:00")
                         ),
@@ -133,12 +141,21 @@ async def fetch_huggingface(config: dict) -> list[NewsItem]:
                 if resp.status_code == 200:
                     for paper in resp.json()[:config.get("top_n", 10)]:
                         paper_info = paper.get("paper", {})
+                        # Use paper's publishedAt if available, otherwise today's date
+                        pub_str = paper_info.get("publishedAt", "")
+                        if pub_str:
+                            try:
+                                published = datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
+                            except ValueError:
+                                published = datetime.now(timezone.utc)
+                        else:
+                            published = datetime.now(timezone.utc)
                         items.append(NewsItem(
                             title=paper_info.get("title", "Untitled"),
                             url=f"https://huggingface.co/papers/{paper_info.get('id', '')}",
                             source="HuggingFace Papers",
                             score=paper.get("numLikes", 0),
-                            published=datetime.now(timezone.utc),
+                            published=published,
                             tags=["huggingface", "paper", "research"],
                         ))
             except Exception as e:
@@ -153,12 +170,21 @@ async def fetch_huggingface(config: dict) -> list[NewsItem]:
                 )
                 if resp.status_code == 200:
                     for model in resp.json():
+                        # Use model's lastModified if available
+                        mod_str = model.get("lastModified", "")
+                        if mod_str:
+                            try:
+                                published = datetime.fromisoformat(mod_str.replace("Z", "+00:00"))
+                            except ValueError:
+                                published = datetime.now(timezone.utc)
+                        else:
+                            published = datetime.now(timezone.utc)
                         items.append(NewsItem(
                             title=f"🤗 {model.get('modelId', 'unknown')}",
                             url=f"https://huggingface.co/{model.get('modelId', '')}",
                             source="HuggingFace Models",
                             score=model.get("likes", 0),
-                            published=datetime.now(timezone.utc),
+                            published=published,
                             tags=["huggingface", "model"] + (model.get("tags", []) or [])[:3],
                         ))
             except Exception as e:
@@ -224,7 +250,7 @@ async def fetch_ruanyf_weekly(config: dict) -> list[NewsItem]:
 
     async with httpx.AsyncClient(timeout=30) as client:
         try:
-            # Find latest issue number from recent commits
+            # Find latest issue number and its commit date
             resp = await client.get(
                 f"https://api.github.com/repos/{repo}/commits",
                 params={"per_page": 10},
@@ -235,16 +261,28 @@ async def fetch_ruanyf_weekly(config: dict) -> list[NewsItem]:
                 return []
 
             issue_num = None
+            commit_date = None
             for commit in resp.json():
                 msg = commit.get("commit", {}).get("message", "")
                 match = re.search(r"issue[_\s-]*(\d+)", msg, re.IGNORECASE)
                 if match:
                     issue_num = match.group(1)
+                    # Use the commit date as publication time
+                    date_str = commit.get("commit", {}).get("committer", {}).get("date", "")
+                    if date_str:
+                        commit_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
                     break
 
             if not issue_num:
                 logger.warning("Could not find latest ruanyf/weekly issue number")
                 return []
+
+            # P2: Skip if the issue commit is older than 7 days
+            if commit_date:
+                age_days = (datetime.now(timezone.utc) - commit_date).days
+                if age_days > 7:
+                    logger.info(f"阮一峰周刊 issue #{issue_num} is {age_days} days old, skipping")
+                    return []
 
             # Fetch the markdown file
             file_resp = await client.get(
@@ -254,8 +292,9 @@ async def fetch_ruanyf_weekly(config: dict) -> list[NewsItem]:
                 logger.warning(f"Failed to fetch issue-{issue_num}.md: {file_resp.status_code}")
                 return []
 
-            items = _parse_ruanyf_markdown(file_resp.text, config)
-            logger.info(f"阮一峰周刊: fetched {len(items)} items from issue #{issue_num}")
+            # Use commit date instead of now() for accurate age filtering
+            items = _parse_ruanyf_markdown(file_resp.text, config, published=commit_date)
+            logger.info(f"阮一峰周刊: fetched {len(items)} items from issue #{issue_num} (age: {age_days if commit_date else '?'}d)")
 
         except Exception as e:
             logger.warning(f"Failed to fetch ruanyf/weekly: {e}")

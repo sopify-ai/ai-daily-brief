@@ -12,6 +12,7 @@ import asyncio
 import argparse
 import json
 import logging
+import re
 import sys
 from pathlib import Path
 
@@ -90,6 +91,50 @@ def deduplicate(items: list[NewsItem]) -> list[NewsItem]:
     return unique
 
 
+def load_previous_urls(archive_dir: str = "archives", lookback_days: int = 2) -> set[str]:
+    """Load URLs from recent archive files to enable cross-day dedup."""
+    from datetime import datetime, timedelta, timezone
+
+    BEIJING_TZ = timezone(timedelta(hours=8))
+    urls: set[str] = set()
+    archive_path = Path(archive_dir)
+    if not archive_path.exists():
+        return urls
+
+    today = datetime.now(BEIJING_TZ)
+    for delta in range(1, lookback_days + 1):
+        date_str = (today - timedelta(days=delta)).strftime("%Y-%m-%d")
+        md_file = archive_path / f"{date_str}.md"
+        if md_file.exists():
+            try:
+                content = md_file.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError) as e:
+                logger.warning(f"Failed to read archive {md_file}: {e}")
+                continue
+            # Match markdown links, handling URLs that may contain balanced parentheses
+            for match in re.finditer(r'\[.*?\]\((https?://(?:[^\s\(\)]+|\([^\)]*\))*)\)', content):
+                urls.add(match.group(1).rstrip("/").lower())
+
+    return urls
+
+
+def cross_day_dedup(items: list[NewsItem], previous_urls: set[str]) -> list[NewsItem]:
+    """Remove items that were already published in previous days."""
+    if not previous_urls:
+        return items
+    filtered = []
+    removed = 0
+    for item in items:
+        normalized = item.url.rstrip("/").lower()
+        if normalized in previous_urls:
+            removed += 1
+        else:
+            filtered.append(item)
+    if removed:
+        logger.info(f"Cross-day dedup removed {removed} previously published items")
+    return filtered
+
+
 async def fetch_all_sources(config: dict) -> list[NewsItem]:
     """Fetch from all configured sources concurrently."""
     sources_cfg = config.get("sources", {})
@@ -126,9 +171,15 @@ async def run(args: argparse.Namespace):
     raw_items = await fetch_all_sources(config)
     logger.info(f"Total raw items: {len(raw_items)}")
 
-    # 2. Deduplicate
+    # 2. Deduplicate (within same run)
     items = deduplicate(raw_items)
     logger.info(f"After dedup: {len(items)}")
+
+    # 2b. Cross-day dedup (remove items already published yesterday)
+    archive_dir = config.get("output", {}).get("archive", {}).get("directory", "archives")
+    previous_urls = load_previous_urls(archive_dir, lookback_days=2)
+    items = cross_day_dedup(items, previous_urls)
+    logger.info(f"After cross-day dedup: {len(items)}")
 
     # 3. Filter by age
     filter_cfg = config.get("filter", {})

@@ -19,6 +19,7 @@ sources:
     enabled: true
     languages: ["python", "typescript", "rust", "go"]
     since: "daily"               # daily | weekly | monthly
+    max_existing_stars: 100000   # skip repos with more stars (permanent fixtures like llama.cpp/ollama/transformers)
 
   huggingface:
     enabled: true
@@ -93,7 +94,7 @@ filter:
       - "crypto"
       - "nft"
       - "blockchain"
-  max_age_hours: 48              # only include items from last 48h
+  max_age_hours: 36              # only include items from last 36h (was 48h; tighter now that published timestamps are accurate)
 
 # Output settings
 output:
