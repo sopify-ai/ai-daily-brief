@@ -58,16 +58,20 @@ def _source_badge(source: str) -> str:
     return f"`{source}`"
 
 
-def _truncate_title(title: str, max_len: int = 80) -> str:
+def _truncate_title(title: str, max_len: int = 120) -> str:
     """Truncate long titles (e.g., GitHub repo descriptions)."""
-    # Strip GitHub-style "owner/repo: long description" to just the meaningful part
+    # GitHub-style "owner/repo: long description" — keep repo name, truncate desc at 80
     if ": " in title and "/" in title.split(": ")[0]:
         parts = title.split(": ", 1)
         repo_name = parts[0]
         desc = parts[1]
-        if len(desc) > max_len - len(repo_name) - 2:
-            desc = desc[:max_len - len(repo_name) - 5] + "..."
-        return f"{repo_name}: {desc}"
+        # Only apply GitHub truncation if prefix looks like a repo (no spaces, short)
+        if " " not in repo_name and len(repo_name) < 60:
+            repo_max = 80
+            avail = max(repo_max - len(repo_name) - 5, 10)
+            if len(desc) > avail:
+                desc = desc[:avail] + "..."
+            return f"{repo_name}: {desc}"
     if len(title) > max_len:
         return title[:max_len - 3] + "..."
     return title
