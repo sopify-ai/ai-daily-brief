@@ -6,81 +6,68 @@
 
 ---
 
-## 📅 2026-04-25 周六
+## 📅 2026-04-26 周日
 
 ### 📌 今日焦点
 
-**[OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API](https://developers.openai.com/api/docs/changelog)** · `HackerNews` ⭐
+**[Google to invest up to $40B in Anthropic in cash and compute](https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/)** · `TechCrunch AI` ⭐
 
-> GPT-5.5/Pro 直接进入 API，意味着新一代基础模型能力已从演示阶段走向开发者可集成、可计费、可上线的生产阶段。开发者应立即做基准回归测试，重点比较质量、延迟、成本与工具调用稳定性，决定是否升级核心链路。
+> Google 最高 400 亿美元加码 Anthropic，不只是资本动作，更是在重塑全球大模型算力、分发与生态版图。对开发者而言，现在就应评估多模型供应链与云依赖风险，把 Anthropic、OpenAI、Google 的接口与成本策略纳入技术路线。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [DeepSeek v4](https://api-docs.deepseek.com/news/news260424)** · `HackerNews` ⭐
+**1. [openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending` ⭐
 
-DeepSeek 新版本逼近前沿模型，开源与价格战可能重塑你的模型选型。
+终端原生编码代理走红，说明开发工作流正从插件时代转向智能体时代。
 
-  📎 延伸: [Hugging Face Blog](https://huggingface.co/blog/deepseekv4) · [The Verge AI](https://www.theverge.com/ai-artificial-intelligence/918035/deepseek-preview-v4-ai-model)
-**2. [Google plans to invest up to $40B in Anthropic](https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic)** · `HackerNews` ⭐
+**2. [Why Cohere is merging with Aleph Alpha](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/)** · `TechCrunch AI`
 
-巨额投资将加速 Anthropic 生态扩张，企业采购与集成格局可能改写。
+Cohere 与 Aleph Alpha 动向，透露欧洲企业级 AI 联盟与主权竞争正在加速。
 
-  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/)
-**3. [Value-Conflict Diagnostics Reveal Widespread Alignment Faking in Language Models](https://arxiv.org/abs/2604.20995)** · `arXiv cs.AI`
+**3. [Anthropic created a test marketplace for agent-on-agent commerce](https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/)** · `TechCrunch AI`
 
-对齐伪装研究提醒你：安全评测不能只看表面“听话”。
+Agent 间交易测试市场，预示支付、身份与协议层将成下一波基础设施机会。
 
-**4. [ComfyUI hits $500M valuation as creators seek more control over AI-generated media](https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/)** · `TechCrunch AI`
+**4. [Deep FinResearch Bench: Evaluating AI's Ability to Conduct Professional Financial Investment Research](https://arxiv.org/abs/2604.21006)** · `arXiv cs.AI`
 
-ComfyUI 商业化提速，说明可控生成工作流正成为开发刚需。
+金融研究基准更贴近高价值场景，能帮助团队检验模型是否真能进生产。
 
-**5. [In another wild turn for AI chips, Meta signs deal for millions of Amazon AI CPUs](https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/)** · `TechCrunch AI`
+**5. [Who Defines Fairness? Target-Based Prompting for Demographic Representation in Generative Models](https://arxiv.org/abs/2604.21036)** · `arXiv cs.AI`
 
-Meta 押注 Amazon AI CPU，预示推理基础设施正出现新变量。
+公平性不只是价值讨论，已成为生成式产品可控输出与合规设计问题。
 
-**6. [There Will Be a Scientific Theory of Deep Learning](https://arxiv.org/abs/2604.21691)** · `HackerNews`
+**6. [Active Data](https://arxiv.org/abs/2604.21044)** · `arXiv cs.AI`
 
-若深度学习理论取得进展，模型设计将更少依赖经验主义试错。
+数据主动选择若能降本增效，将直接改变训练与持续学习的工程经济学。
 
-**7. [How Project Maven taught the military to love AI](https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson)** · `The Verge AI`
+**7. [Maine’s governor vetoes data center moratorium](https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium/)** · `TechCrunch AI`
 
-Project Maven 的演进显示，AI 正更深进入高风险真实场景。
+数据中心政策松动影响算力供给、选址与电力成本，开发者也会被间接定价。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[Show HN: Browser Harness – Gives LLM freedom to complete any browser task](https://github.com/browser-use/browser-harness)** · `HackerNews`
+**[8 Gemini tips for organizing your space (and life)](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)** · `Google AI Blog`
 
-让 LLM 自主完成浏览器任务，适合评估代理式自动化的真实边界。
-
-**[The Last Harness You'll Ever Build](https://arxiv.org/abs/2604.21003)** · `arXiv cs.AI`
-
-面向长期任务的 harness 方案，值得做智能体评测与回归测试参考。
+虽偏消费向，但能观察 Gemini 如何把模型能力产品化为可复用的组织与助手体验。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正拉开 AI 团队差距的，不是能接入多少模型，而是能多快把新模型跑进生产验证。
+> AI 的下一场竞争，不是谁参数更多，而是谁先把模型、算力与工作流接成可落地的系统。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🚀 [DeepSeek previews new AI model that ‘closes the gap’ with frontier models](https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/) · `TechCrunch AI`
-- 📊 [Apple’s new CEO, and why Elon Musk wants to buy Cursor for $60B](https://techcrunch.com/podcast/apples-new-ceo-and-why-elon-musk-wants-to-buy-cursor-for-60b/) · `TechCrunch AI`
-- 🔬 [Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks](https://arxiv.org/abs/2604.20987) · `arXiv cs.AI`
-- 🔬 [Adaptive Test-Time Compute Allocation with Evolving In-Context Demonstrations](https://arxiv.org/abs/2604.21018) · `arXiv cs.AI`
-- 📊 [Musk vs. Altman is here, and it&#8217;s going to get messy](https://www.theverge.com/ai-artificial-intelligence/917755/musk-altman-openai-xai-gossip) · `The Verge AI`
-- 📊 [Meta is laying off 10 percent of its staff](https://www.theverge.com/tech/917690/meta-is-laying-off-10-percent-of-its-staff) · `The Verge AI`
-- 📊 [Meta’s loss is Thinking Machines’ gain](https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/) · `TechCrunch AI`
-- 🔬 [Escaping the Agreement Trap: Defensibility Signals for Evaluating Rule-Governed AI](https://arxiv.org/abs/2604.20972) · `arXiv cs.AI`
-- 💡 [不要使用 Ollama](https://sleepingrobots.com/dreams/stop-using-ollama/) · `阮一峰周刊`
-- 📊 [Prestigious photo contest answers ‘what is a photo?’](https://www.theverge.com/gadgets/918016/prestigious-photo-contest-answers-what-is-a-photo) · `The Verge AI`
+- 📊 [OpenAI CEO apologizes to Tumbler Ridge community](https://techcrunch.com/2026/04/25/openai-ceo-apologizes-to-tumbler-ridge-community/) · `TechCrunch AI`
+- 🔬 [Architecture of an AI-Based Automated Course of Action Generation System for Military Operations](https://arxiv.org/abs/2604.20862) · `arXiv cs.AI`
+- 🔬 [HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](https://arxiv.org/abs/2604.21027) · `arXiv cs.AI`
 
 
 ---
@@ -89,9 +76,9 @@ Project Maven 的演进显示，AI 正更深进入高风险真实场景。
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 134 篇 | 40 篇 | 20 篇 | **10 篇** |
+| 11 源 | 138 篇 | 19 篇 | 12 篇 | **9 篇** |
 
-*生成于 2026-04-25 14:38 UTC+8*
+*生成于 2026-04-26 10:29 UTC+8*
 
 ## 📚 往期简报
 
