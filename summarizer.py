@@ -21,7 +21,7 @@ Respond in JSON:
   "items": [
     {
       "index": 0,
-      "relevant": true,
+      "relevance": "core",
       "category": "tool",
       "importance": 8,
       "topic_key": "gpt-5.5-release"
@@ -30,10 +30,10 @@ Respond in JSON:
 }
 
 Rules:
+- relevance: "core" (directly about AI/ML/dev-tools) | "adjacent" (tech industry or developer-adjacent) | "off-topic" (unrelated to AI/developers)
 - category: "product" | "tool" | "research" | "industry" | "tutorial"
-- importance: 1-10 (impact on AI developers)
-- topic_key: short identifier for the topic (same key = same event across sources)
-- relevant: false if not about AI/ML/dev-tools"""
+- importance: 1-10 (impact on AI developers; off-topic items MUST receive importance ≤ 2, adjacent items typically 3-5)
+- topic_key: short identifier for the topic (same key = same event across sources)"""
 
 # Stage 2: Editor-in-chief curation
 STAGE2_PROMPT = """你是一位面向开发者的 AI 技术日报主编。从候选新闻中策展今日简报。
@@ -120,7 +120,8 @@ def _run_stage1(items: list[NewsItem], config: dict) -> list[dict]:
             result = json.loads(response.choices[0].message.content)
             for entry in result.get("items", []):
                 idx = entry.get("index", 0)
-                if idx < len(batch) and entry.get("relevant", False):
+                importance = entry.get("importance", 0)
+                if idx < len(batch) and importance >= 3:
                     item = batch[idx]
                     scored.append({
                         "title": item.title,
@@ -129,13 +130,13 @@ def _run_stage1(items: list[NewsItem], config: dict) -> list[dict]:
                         "score": item.score,
                         "published": item.published.isoformat(),
                         "category": entry.get("category", "tool"),
-                        "importance": entry.get("importance", 5),
+                        "importance": importance,
                         "topic_key": entry.get("topic_key", f"item-{i+idx}"),
                         "tags": item.tags,
                     })
 
             logger.info(f"Stage1 batch {i//batch_size + 1}: "
-                        f"{len(batch)} → {sum(1 for e in result.get('items', []) if e.get('relevant'))} relevant")
+                        f"{len(batch)} → {sum(1 for e in result.get('items', []) if e.get('importance', 0) >= 3)} scored (importance≥3)")
 
         except Exception as e:
             logger.error(f"Stage1 batch {i//batch_size + 1} failed: {e}")

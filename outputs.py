@@ -152,13 +152,6 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
                     content += f"{reason}\n\n"
         content += "---\n\n"
 
-    # === 金句 ===
-    quote = brief.get("quote", "")
-    if quote:
-        content += f"### 💡 今日洞察\n\n"
-        content += f"> {quote}\n\n"
-        content += "---\n\n"
-
     # === 延伸阅读 (remaining candidates not selected) ===
     selected_indices = set(used_indices)
     for tool in tools:
@@ -168,7 +161,17 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
         (i, item) for i, item in enumerate(candidates)
         if i not in selected_indices
     ]
-    if remaining:
+    has_further_reading = bool(remaining)
+
+    # Emit quote section divider only if further reading follows,
+    # otherwise it would collide with the footer's leading ---
+    if quote:
+        content += f"### 💡 今日洞察\n\n"
+        content += f"> {quote}\n\n"
+        if has_further_reading:
+            content += "---\n\n"
+
+    if has_further_reading:
         content += f"### 📎 延伸阅读\n\n"
         for i, item in remaining[:10]:
             cat_emoji = CATEGORY_EMOJI.get(item.get("category", ""), "•")
