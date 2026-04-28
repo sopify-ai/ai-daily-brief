@@ -162,6 +162,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
         if i not in selected_indices
     ]
     has_further_reading = bool(remaining)
+    quote = brief.get("quote", "")
 
     # Emit quote section divider only if further reading follows,
     # otherwise it would collide with the footer's leading ---
