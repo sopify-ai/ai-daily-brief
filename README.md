@@ -4,7 +4,7 @@
 
 **每日 AI / 开发者工具链精选简报 — 自动采集 · GPT 策展 · 零人工**
 
-[![Daily Update](https://github.com/sopify-ai/ai-daily-brief/actions/workflows/daily-news.yml/badge.svg)](https://github.com/sopify-ai/ai-daily-brief/actions/workflows/daily-news.yml)
+[![Daily Update](https://github.com/Li-Sanze/ai-daily-brief/actions/workflows/daily-news.yml/badge.svg)](https://github.com/Li-Sanze/ai-daily-brief/actions/workflows/daily-news.yml)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -107,7 +107,7 @@
 ### 1. 克隆 & 安装
 
 ```bash
-git clone https://github.com/sopify-ai/ai-daily-brief.git
+git clone https://github.com/Li-Sanze/ai-daily-brief.git
 cd ai-daily-brief
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt

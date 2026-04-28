@@ -2,7 +2,7 @@
 
 > 每日 AI / 开发者工具链精选简报 · GitHub Actions + GPT 自动策展
 
-[![Daily Update](https://github.com/sopify-ai/ai-daily-brief/actions/workflows/daily-news.yml/badge.svg)](https://github.com/sopify-ai/ai-daily-brief/actions/workflows/daily-news.yml)
+[![Daily Update](https://github.com/Li-Sanze/ai-daily-brief/actions/workflows/daily-news.yml/badge.svg)](https://github.com/Li-Sanze/ai-daily-brief/actions/workflows/daily-news.yml)
 
 ---
 

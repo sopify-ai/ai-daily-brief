@@ -95,7 +95,7 @@ def format_daily_brief(curation_result: dict, config: dict, pipeline_stats: dict
     """Generate daily brief README content."""
     candidates = curation_result["candidates"]
     brief = curation_result["brief"]
-    repo = os.environ.get("GITHUB_REPOSITORY", "sopify-ai/ai-daily-brief")
+    repo = os.environ.get("GITHUB_REPOSITORY", "Li-Sanze/ai-daily-brief")
     date = datetime.now(BEIJING_TZ).strftime("%Y-%m-%d")
     weekday_zh = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
     weekday = weekday_zh[datetime.now(BEIJING_TZ).weekday()]
