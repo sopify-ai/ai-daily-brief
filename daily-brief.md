@@ -6,80 +6,79 @@
 
 ---
 
-## 📅 2026-04-29 周三
+## 📅 2026-04-30 周四
 
 ### 📌 今日焦点
 
-**[OpenAI models, Codex, and Managed Agents come to AWS](https://openai.com/index/openai-on-aws)** · `OpenAI Blog` ⭐
+**[Mistral Medium 3.5](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)** · `HackerNews`
 
-> OpenAI 模型、Codex 与托管代理进入 AWS，意味着顶级模型能力正更深地嵌入主流云基础设施，企业级 AI 交付门槛会进一步下降。对开发者来说，应该尽快评估 Bedrock 上的接入、权限治理、成本监控与多模型编排方案，避免未来被单一平台锁定。
+> Mistral Medium 3.5 代表欧洲头部模型厂商在中高端通用模型上的持续追赶，直接影响企业选型、成本结构与多供应商策略。开发者应尽快做基准测试与迁移评估，重点比较推理质量、延迟、价格和私有化部署可行性。
 
-  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/)
 
 ---
 
 ### 🔥 热点速览
 
-**1. [openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending` ⭐
+**1. [Microsoft says it has over 20M paid Copilot users, and they really are using it](https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/)** · `TechCrunch AI`
 
-终端原生编程代理会直接改变开发者日常工作流，值得尽快上手验证。
+2000万付费用户验证 Copilot 已从概念走向真实生产力平台。
 
-**2. [Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents](https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence)** · `Hugging Face Blog`
+**2. [Sources: Anthropic could raise a new $50B round at a valuation of $900B](https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/)** · `TechCrunch AI`
 
-长上下文多模态模型正逼近真实业务文档流，代理应用边界会被放大。
+Anthropic 超大融资若落地，将重塑模型竞争与云资源分配。
 
-**3. [Claude can now plug directly into Photoshop, Blender, and Ableton](https://www.theverge.com/ai-artificial-intelligence/919648/anthropic-claude-creative-connectors-adobe-blender)** · `The Verge AI`
+**3. [AI evals are becoming the new compute bottleneck](https://huggingface.co/blog/evaleval/eval-costs-bottleneck)** · `Hugging Face Blog`
 
-AI 直接接入专业创作软件，预示“应用内代理”将成为下一波产品形态。
+评测成瓶颈意味着团队该把 eval 当基础设施而非附属脚本。
 
-**4. [FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean](https://arxiv.org/abs/2604.23002)** · `arXiv cs.AI`
+**4. [Evaluating Risks in Weak-to-Strong Alignment: A Bias-Variance Perspective](https://arxiv.org/abs/2604.25077)** · `arXiv cs.AI`
 
-科学自动形式化若能扩展，将推动可验证 AI 从代码走向知识生产。
+对齐研究正从口号转向可分析框架，值得做安全设计参考。
 
-**5. [A Systematic Approach for Large Language Models Debugging](https://arxiv.org/abs/2604.23027)** · `arXiv cs.AI`
+**5. [Accelerating RL Post-Training Rollouts via System-Integrated Speculative Decoding](https://huggingface.co/papers/2604.26779)** · `HuggingFace Papers`
 
-LLM 调试方法论正在补齐工程短板，能直接提升线上稳定性与迭代效率。
+投机解码进入 RL 后训练，可直接带来吞吐与成本收益。
 
-**6. [Don't Make the LLM Read the Graph: Make the Graph Think](https://arxiv.org/abs/2604.23057)** · `arXiv cs.AI`
+**6. [Ramp's Sheets AI Exfiltrates Financials](https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials)** · `HackerNews`
 
-把推理压力转给图结构而非纯文本，可能重塑 RAG 与知识系统架构。
+财务数据外泄案例提醒：接入 AI 表格前先做权限与审计设计。
 
-**7. [GitHub Copilot code review will start consuming GitHub Actions minutes](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/)** · `HackerNews`
+**7. [Toward a Science of Intent: Closure Gaps and Delegation Envelopes for Open-World AI Agents](https://arxiv.org/abs/2604.25000)** · `arXiv cs.AI`
 
-Copilot 审查开始消耗 Actions 分钟，AI 功能正从体验问题变成成本问题。
+开放世界 Agent 的边界定义，将决定产品何时能安全放权。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[meilisearch/meilisearch: A lightning-fast search engine API bringing AI-power...](https://github.com/meilisearch/meilisearch)** · `GitHub Trending`
+**[ClawGym: A Scalable Framework for Building Effective Claw Agents](https://huggingface.co/papers/2604.26904)** · `HuggingFace Papers`
 
-开源搜索基础设施叠加混合检索能力，适合快速构建 AI 原生搜索与知识库应用。
+适合做具身智能与工具使用 Agent 的训练评测基座，且具备可扩展实验价值。
 
-**[1Panel-dev/1Panel: 🔥 1Panel is a modern, open-source VPS control panel — and ...](https://github.com/1Panel-dev/1Panel)** · `GitHub Trending`
+**[Letting AI play my game – building an agentic test harness to help play-testing](https://blog.jeffschomay.com/letting-ai-play-my-game)** · `HackerNews`
 
-把 VPS 面板与原生 AI agent 结合，对中小团队私有化部署很有吸引力。
+把 Agent 用到游戏测试是高性价比落地方向，适合借鉴自动化 harness 设计。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正改变软件工程的，不是模型会写代码，而是它开始接管调用、验证与交付的整个闭环。
+> 真正拉开 AI 团队差距的，不只是更大的模型，而是更快的评测闭环。
 
 ---
 
 ### 📎 延伸阅读
 
-- 📊 [OpenAI models coming to Amazon Bedrock: Interview with OpenAI and AWS CEOs](https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/) · `HackerNews`
-- 🛠️ [VibeVoice: Open-source frontier voice AI](https://github.com/microsoft/VibeVoice) · `HackerNews`
-- 🛠️ [Claude system prompt bug wastes user money and bricks managed agents](https://github.com/anthropics/claude-code/issues/49363) · `HackerNews`
-- 🔬 [Recursive Multi-Agent Systems](https://huggingface.co/papers/2604.25917) · `HuggingFace Papers`
-- 📊 [Google and Pentagon reportedly agree on deal for ‘any lawful’ use of AI](https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal) · `The Verge AI`
-- 🛠️ [Lovable launches its vibe-coding app on iOS and Android](https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/) · `TechCrunch AI`
-- 🛠️ [Red Hat’s OpenClaw maintainer just made enterprise Claw deployments a lot safer](https://techcrunch.com/2026/04/28/red-hats-openclaw-maintainer-just-made-enterprise-claw-deployments-a-lot-safer/) · `TechCrunch AI`
-- 🔬 [PExA: Parallel Exploration Agent for Complex Text-to-SQL](https://arxiv.org/abs/2604.22934) · `arXiv cs.AI`
-- 🔬 [A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows](https://arxiv.org/abs/2604.23049) · `arXiv cs.AI`
-- 📊 [Claude.ai unavailable and elevated errors on the API](https://status.claude.com/incidents/9l93x2ht4s5w) · `HackerNews`
+- 📊 [Satya Nadella says he’s ready to ‘exploit’ the new OpenAI deal](https://techcrunch.com/2026/04/29/satya-nadella-says-hes-ready-to-exploit-the-new-openai-deal/) · `TechCrunch AI`
+- 📊 [Building the compute infrastructure for the Intelligence Age](https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age) · `OpenAI Blog`
+- 🔬 [Granite 4.1 LLMs: How They’re Built](https://huggingface.co/blog/ibm-granite/granite-4-1) · `Hugging Face Blog`
+- 📊 [Larry’s risky business](https://www.theverge.com/ai-artificial-intelligence/920378/oracle-openai-datacenter-buildout) · `The Verge AI`
+- 🔬 [Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](https://arxiv.org/abs/2604.24881) · `arXiv cs.AI`
+- 🔬 [Adaptive Prompt Embedding Optimization for LLM Jailbreaking](https://arxiv.org/abs/2604.24983) · `arXiv cs.AI`
+- 🔬 [Leverage Laws: A Per-Task Framework for Human-Agent Collaboration](https://arxiv.org/abs/2604.25040) · `arXiv cs.AI`
+- 📊 [Claude.ai and API unavailable [fixed]](https://status.claude.com/incidents/2gf1jpyty350) · `HackerNews`
+- 🔬 [Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising](https://huggingface.co/papers/2604.26694) · `HuggingFace Papers`
+- 📊 [Cybersecurity in the Intelligence Age](https://openai.com/index/cybersecurity-in-the-intelligence-age) · `OpenAI Blog`
 
 
 ---
@@ -88,9 +87,9 @@ Copilot 审查开始消耗 Actions 分钟，AI 功能正从体验问题变成成
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 137 篇 | 53 篇 | 20 篇 | **10 篇** |
+| 11 源 | 134 篇 | 44 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-04-29 10:39 UTC+8*
+*生成于 2026-04-30 10:40 UTC+8*
 
 ## 📚 往期简报
 
