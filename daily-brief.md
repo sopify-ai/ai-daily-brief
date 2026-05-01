@@ -6,79 +6,80 @@
 
 ---
 
-## 📅 2026-04-30 周四
+## 📅 2026-05-01 周五
 
 ### 📌 今日焦点
 
-**[Mistral Medium 3.5](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)** · `HackerNews`
+**[Shai-Hulud Themed Malware Found in the PyTorch Lightning AI Training Library](https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/)** · `HackerNews` ⭐
 
-> Mistral Medium 3.5 代表欧洲头部模型厂商在中高端通用模型上的持续追赶，直接影响企业选型、成本结构与多供应商策略。开发者应尽快做基准测试与迁移评估，重点比较推理质量、延迟、价格和私有化部署可行性。
+> 这条最重要，因为它直指开源 AI 训练基础设施的供应链安全，影响范围可能覆盖大量依赖 PyTorch Lightning 的训练与实验环境。开发者应立即排查依赖版本、审计构建链路与凭证暴露面，并把模型训练环境纳入与生产同等级的安全响应流程。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [Microsoft says it has over 20M paid Copilot users, and they really are using it](https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/)** · `TechCrunch AI`
+**1. [Elon Musk confirms xAI used OpenAI’s models to train Grok](https://www.theverge.com/ai-artificial-intelligence/921546/elon-musk-xai-openai-trial-model-distillation)** · `The Verge AI`
 
-2000万付费用户验证 Copilot 已从概念走向真实生产力平台。
+头部模型互训争议会重塑数据合规、模型评测与竞争边界。
 
-**2. [Sources: Anthropic could raise a new $50B round at a valuation of $900B](https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/)** · `TechCrunch AI`
+  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/)
+**2. [Stripe introduces Link, a digital wallet that autonomous AI agents can use, too](https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/)** · `TechCrunch AI`
 
-Anthropic 超大融资若落地，将重塑模型竞争与云资源分配。
+AI Agent 获得原生支付能力后，自动化工作流将真正闭环。
 
-**3. [AI evals are becoming the new compute bottleneck](https://huggingface.co/blog/evaleval/eval-costs-bottleneck)** · `Hugging Face Blog`
+**3. [OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms](https://arxiv.org/abs/2604.26211)** · `arXiv cs.AI`
 
-评测成瓶颈意味着团队该把 eval 当基础设施而非附属脚本。
+让模型评估并进化算法，可能改变 AutoML 的效率上限。
 
-**4. [Evaluating Risks in Weak-to-Strong Alignment: A Bias-Variance Perspective](https://arxiv.org/abs/2604.25077)** · `arXiv cs.AI`
+**4. [DreamProver: Evolving Transferable Lemma Libraries via a Wake-Sleep Theorem-Proving Agent](https://arxiv.org/abs/2604.26311)** · `arXiv cs.AI`
 
-对齐研究正从口号转向可分析框架，值得做安全设计参考。
+可迁移引理库若成熟，形式化验证与自动证明将明显提速。
 
-**5. [Accelerating RL Post-Training Rollouts via System-Integrated Speculative Decoding](https://huggingface.co/papers/2604.26779)** · `HuggingFace Papers`
+**5. [Introducing Advanced Account Security](https://openai.com/index/advanced-account-security)** · `OpenAI Blog`
 
-投机解码进入 RL 后训练，可直接带来吞吐与成本收益。
+账号安全升级虽不炫技，却直接关系 API、数据与团队资产安全。
 
-**6. [Ramp's Sheets AI Exfiltrates Financials](https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials)** · `HackerNews`
+**6. [After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too](https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/)** · `TechCrunch AI`
 
-财务数据外泄案例提醒：接入 AI 表格前先做权限与审计设计。
+模型访问收紧提醒团队尽早做多模型冗余与权限预案。
 
-**7. [Toward a Science of Intent: Closure Gaps and Delegation Envelopes for Open-World AI Agents](https://arxiv.org/abs/2604.25000)** · `arXiv cs.AI`
+**7. [Sources: Anthropic potential $900B+ valuation round could happen within 2 weeks](https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/)** · `TechCrunch AI`
 
-开放世界 Agent 的边界定义，将决定产品何时能安全放权。
+超高估值不只是资本信号，也预示基础模型竞争继续加码。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[ClawGym: A Scalable Framework for Building Effective Claw Agents](https://huggingface.co/papers/2604.26904)** · `HuggingFace Papers`
+**[warpdotdev/warp: Warp is an agentic development environment, born out of the ...](https://github.com/warpdotdev/warp)** · `GitHub Trending`
 
-适合做具身智能与工具使用 Agent 的训练评测基座，且具备可扩展实验价值。
+Warp 正在把终端升级为 agentic 开发入口，值得关注人机协同编程体验。
 
-**[Letting AI play my game – building an agentic test harness to help play-testing](https://blog.jeffschomay.com/letting-ai-play-my-game)** · `HackerNews`
+**[Show HN: Pu.sh – a full coding-agent harness in 400 lines of shell](https://pu.dev/)** · `HackerNews`
 
-把 Agent 用到游戏测试是高性价比落地方向，适合借鉴自动化 harness 设计。
+400 行 shell 搭出 coding-agent harness，适合快速理解与改造 Agent 执行框架。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正拉开 AI 团队差距的，不只是更大的模型，而是更快的评测闭环。
+> 真正拉开 AI 差距的，不只是模型更强，而是谁先把安全、支付和工作流接进同一条闭环。
 
 ---
 
 ### 📎 延伸阅读
 
-- 📊 [Satya Nadella says he’s ready to ‘exploit’ the new OpenAI deal](https://techcrunch.com/2026/04/29/satya-nadella-says-hes-ready-to-exploit-the-new-openai-deal/) · `TechCrunch AI`
-- 📊 [Building the compute infrastructure for the Intelligence Age](https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age) · `OpenAI Blog`
-- 🔬 [Granite 4.1 LLMs: How They’re Built](https://huggingface.co/blog/ibm-granite/granite-4-1) · `Hugging Face Blog`
-- 📊 [Larry’s risky business](https://www.theverge.com/ai-artificial-intelligence/920378/oracle-openai-datacenter-buildout) · `The Verge AI`
-- 🔬 [Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](https://arxiv.org/abs/2604.24881) · `arXiv cs.AI`
-- 🔬 [Adaptive Prompt Embedding Optimization for LLM Jailbreaking](https://arxiv.org/abs/2604.24983) · `arXiv cs.AI`
-- 🔬 [Leverage Laws: A Per-Task Framework for Human-Agent Collaboration](https://arxiv.org/abs/2604.25040) · `arXiv cs.AI`
-- 📊 [Claude.ai and API unavailable [fixed]](https://status.claude.com/incidents/2gf1jpyty350) · `HackerNews`
-- 🔬 [Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising](https://huggingface.co/papers/2604.26694) · `HuggingFace Papers`
-- 📊 [Cybersecurity in the Intelligence Age](https://openai.com/index/cybersecurity-in-the-intelligence-age) · `OpenAI Blog`
+- 🛠️ [Claude Code refuses requests or charges extra if your commits mention "OpenClaw"](https://twitter.com/theo/status/2049645973350363168) · `HackerNews`
+- 📊 [All the evidence unveiled so far in Musk v. Altman](https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial) · `The Verge AI`
+- 📊 [Here&#8217;s how the new Microsoft and OpenAI deal breaks down](https://www.theverge.com/tech/921210/microsoft-openai-partnership-divorce-notepad) · `The Verge AI`
+- 🔬 [Synthetic Computers at Scale for Long-Horizon Productivity Simulation](https://huggingface.co/papers/2604.28181) · `HuggingFace Papers`
+- 📊 [The craziest part of Musk v. Altman happened while the jury was out of the room](https://www.theverge.com/ai-artificial-intelligence/921713/musk-v-altman-jared-birchall-screw-up-xai) · `The Verge AI`
+- 📊 [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit) · `The Verge AI`
+- 📊 [Legal AI startup Legora hits $5.6B valuation and its battle with Harvey just got hotter](https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/) · `TechCrunch AI`
+- 🛠️ [OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico](https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico/) · `TechCrunch AI`
+- 🔬 [Evaluating Strategic Reasoning in Forecasting Agents](https://arxiv.org/abs/2604.26106) · `arXiv cs.AI`
+- 🔬 [Auto-Relational Reasoning](https://arxiv.org/abs/2604.26507) · `arXiv cs.AI`
 
 
 ---
@@ -87,9 +88,9 @@ Anthropic 超大融资若落地，将重塑模型竞争与云资源分配。
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 134 篇 | 44 篇 | 20 篇 | **10 篇** |
+| 11 源 | 135 篇 | 48 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-04-30 10:40 UTC+8*
+*生成于 2026-05-01 10:46 UTC+8*
 
 ## 📚 往期简报
 
