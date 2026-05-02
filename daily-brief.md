@@ -6,80 +6,79 @@
 
 ---
 
-## 📅 2026-05-01 周五
+## 📅 2026-05-02 周六
 
 ### 📌 今日焦点
 
-**[Shai-Hulud Themed Malware Found in the PyTorch Lightning AI Training Library](https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/)** · `HackerNews` ⭐
+**[openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending` ⭐
 
-> 这条最重要，因为它直指开源 AI 训练基础设施的供应链安全，影响范围可能覆盖大量依赖 PyTorch Lightning 的训练与实验环境。开发者应立即排查依赖版本、审计构建链路与凭证暴露面，并把模型训练环境纳入与生产同等级的安全响应流程。
+> Codex 以“终端内轻量编码代理”形态进入开发者主工作流，说明 AI 编程正从聊天窗口走向可执行、可集成、可自动化的命令行入口。开发者应尽快在本地仓库、CI 脚本和日常调试流程中试跑这类代理，并优先评估其安全边界、可审计性与团队协作适配度。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [Elon Musk confirms xAI used OpenAI’s models to train Grok](https://www.theverge.com/ai-artificial-intelligence/921546/elon-musk-xai-openai-trial-model-distillation)** · `The Verge AI`
+**1. [aaif-goose/goose: an open source, extensible AI agent that goes beyond code s...](https://github.com/aaif-goose/goose)** · `GitHub Trending`
 
-头部模型互训争议会重塑数据合规、模型评测与竞争边界。
+开源代理从建议迈向执行，值得关注可扩展插件与权限模型。
 
-  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/)
-**2. [Stripe introduces Link, a digital wallet that autonomous AI agents can use, too](https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/)** · `TechCrunch AI`
+**2. [When Your LLM Reaches End-of-Life: A Framework for Confident Model Migration in Production Systems](https://arxiv.org/abs/2604.27082)** · `arXiv cs.AI`
 
-AI Agent 获得原生支付能力后，自动化工作流将真正闭环。
+模型迁移已成生产必修课，直接关系成本、稳定性与合规。
 
-**3. [OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms](https://arxiv.org/abs/2604.26211)** · `arXiv cs.AI`
+**3. [Step-level Optimization for Efficient Computer-use Agents](https://arxiv.org/abs/2604.27151)** · `arXiv cs.AI`
 
-让模型评估并进化算法，可能改变 AutoML 的效率上限。
+逐步优化代理效率，决定电脑操作型 Agent 能否真正落地。
 
-**4. [DreamProver: Evolving Transferable Lemma Libraries via a Wake-Sleep Theorem-Proving Agent](https://arxiv.org/abs/2604.26311)** · `arXiv cs.AI`
+**4. [Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks](https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/)** · `TechCrunch AI`
 
-可迁移引理库若成熟，形式化验证与自动证明将明显提速。
+机密网络部署 AI 释放强信号，企业私有化与合规需求会加速。
 
-**5. [Introducing Advanced Account Security](https://openai.com/index/advanced-account-security)** · `OpenAI Blog`
+**5. [Microsoft wants lawyers to trust its new AI agent in Word documents](https://www.theverge.com/news/921944/microsoft-word-legal-agent-ai)** · `The Verge AI`
 
-账号安全升级虽不炫技，却直接关系 API、数据与团队资产安全。
+法律文档场景若被验证，将推动高风险办公流程接入 AI。
 
-**6. [After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too](https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/)** · `TechCrunch AI`
+**6. [Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI](https://arxiv.org/abs/2604.27096)** · `arXiv cs.AI`
 
-模型访问收紧提醒团队尽早做多模型冗余与权限预案。
+自愈式多智能体做 ML 流水线，可能重塑 AutoML 工程范式。
 
-**7. [Sources: Anthropic potential $900B+ valuation round could happen within 2 weeks](https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/)** · `TechCrunch AI`
+**7. [ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet](https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/)** · `TechCrunch AI`
 
-超高估值不只是资本信号，也预示基础模型竞争继续加码。
+区域采用差异提醒团队：多模态产品增长不只靠模型能力。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[warpdotdev/warp: Warp is an agentic development environment, born out of the ...](https://github.com/warpdotdev/warp)** · `GitHub Trending`
+**[farion1231/cc-switch: A cross-platform desktop All-in-One assistant tool for ...](https://github.com/farion1231/cc-switch)** · `GitHub Trending`
 
-Warp 正在把终端升级为 agentic 开发入口，值得关注人机协同编程体验。
+统一管理 Claude Code、Codex 等多助手，适合比较不同编码代理的真实产出。
 
-**[Show HN: Pu.sh – a full coding-agent harness in 400 lines of shell](https://pu.dev/)** · `HackerNews`
+**[go-gitea/gitea: Git with a cup of tea! Painless self-hosted all-in-one softwa...](https://github.com/go-gitea/gitea)** · `GitHub Trending`
 
-400 行 shell 搭出 coding-agent harness，适合快速理解与改造 Agent 执行框架。
+成熟自托管 DevOps 平台，正适合作为团队接入 AI 工作流的安全底座。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正拉开 AI 差距的，不只是模型更强，而是谁先把安全、支付和工作流接进同一条闭环。
+> 真正改变软件工程的，不是会说代码的模型，而是能进入工作流、承担责任的代理。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🛠️ [Claude Code refuses requests or charges extra if your commits mention "OpenClaw"](https://twitter.com/theo/status/2049645973350363168) · `HackerNews`
-- 📊 [All the evidence unveiled so far in Musk v. Altman](https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial) · `The Verge AI`
-- 📊 [Here&#8217;s how the new Microsoft and OpenAI deal breaks down](https://www.theverge.com/tech/921210/microsoft-openai-partnership-divorce-notepad) · `The Verge AI`
-- 🔬 [Synthetic Computers at Scale for Long-Horizon Productivity Simulation](https://huggingface.co/papers/2604.28181) · `HuggingFace Papers`
-- 📊 [The craziest part of Musk v. Altman happened while the jury was out of the room](https://www.theverge.com/ai-artificial-intelligence/921713/musk-v-altman-jared-birchall-screw-up-xai) · `The Verge AI`
-- 📊 [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit) · `The Verge AI`
-- 📊 [Legal AI startup Legora hits $5.6B valuation and its battle with Harvey just got hotter](https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/) · `TechCrunch AI`
-- 🛠️ [OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico](https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico/) · `TechCrunch AI`
-- 🔬 [Evaluating Strategic Reasoning in Forecasting Agents](https://arxiv.org/abs/2604.26106) · `arXiv cs.AI`
-- 🔬 [Auto-Relational Reasoning](https://arxiv.org/abs/2604.26507) · `arXiv cs.AI`
+- 🛠️ [Show HN: AI CAD Harness](https://fusion.adam.new/install) · `HackerNews`
+- 🔬 [End-to-end autonomous scientific discovery on a real optical platform](https://arxiv.org/abs/2604.27092) · `arXiv cs.AI`
+- 💡 [GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode](https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-interactive-v-non-interactive-mode/) · `GitHub Blog`
+- 📊 [Meta buys robotics startup to bolster its humanoid AI ambitions](https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/) · `TechCrunch AI`
+- 🛠️ [TRUST: A Framework for Decentralized AI Service v.0.1](https://arxiv.org/abs/2604.27132) · `arXiv cs.AI`
+- 🔬 [The gay jailbreak technique](https://github.com/Exocija/ZetaLib/blob/main/The%20Gay%20Jailbreak/The%20Gay%20Jailbreak.md) · `HackerNews`
+- 📊 [Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic](https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia) · `The Verge AI`
+- 📊 [Meta is running get-rich-quick ads for its AI tools](https://www.theverge.com/ai-artificial-intelligence/915970/meta-manus-ai-ads-website-slop) · `The Verge AI`
+- 🚀 [Gemini is rolling out to cars with Google built-in](https://www.theverge.com/tech/921117/google-gemini-ai-assistant-cars-upgrade) · `The Verge AI`
+- 📊 [Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell](https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/) · `TechCrunch AI`
 
 
 ---
@@ -88,9 +87,9 @@ Warp 正在把终端升级为 agentic 开发入口，值得关注人机协同编
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 135 篇 | 48 篇 | 20 篇 | **10 篇** |
+| 10 源 | 119 篇 | 32 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-01 10:46 UTC+8*
+*生成于 2026-05-02 10:28 UTC+8*
 
 ## 📚 往期简报
 
