@@ -6,79 +6,71 @@
 
 ---
 
-## 📅 2026-05-02 周六
+## 📅 2026-05-03 周日
 
 ### 📌 今日焦点
 
-**[openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending` ⭐
+**[browser-use/browser-use: 🌐 Make websites accessible for AI agents. Automate t...](https://github.com/browser-use/browser-use)** · `GitHub Trending` ⭐
 
-> Codex 以“终端内轻量编码代理”形态进入开发者主工作流，说明 AI 编程正从聊天窗口走向可执行、可集成、可自动化的命令行入口。开发者应尽快在本地仓库、CI 脚本和日常调试流程中试跑这类代理，并优先评估其安全边界、可审计性与团队协作适配度。
+> browser-use 把“让 AI 真正操作网页”从概念推向开发者可落地的基础设施，这直接影响代理式应用的上限与交付速度。建议开发者尽快评估其在登录、表单、检索与多步流程中的稳定性，并把可观测性与权限控制一并纳入设计。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [aaif-goose/goose: an open source, extensible AI agent that goes beyond code s...](https://github.com/aaif-goose/goose)** · `GitHub Trending`
+**1. [DeepSeek V4—almost on the frontier](https://simonwillison.net/2026/Apr/24/deepseek-v4/)** · `HackerNews`
 
-开源代理从建议迈向执行，值得关注可扩展插件与权限模型。
+DeepSeek V4 若逼近前沿，模型选型与成本结构都可能被重写。
 
-**2. [When Your LLM Reaches End-of-Life: A Framework for Confident Model Migration in Production Systems](https://arxiv.org/abs/2604.27082)** · `arXiv cs.AI`
+**2. [VS Code inserting 'Co-Authored-by Copilot' into commits regardless of usage](https://github.com/microsoft/vscode/pull/310226)** · `HackerNews`
 
-模型迁移已成生产必修课，直接关系成本、稳定性与合规。
+AI 参与痕迹应可控可审计，提交链路的默认行为值得团队警惕。
 
-**3. [Step-level Optimization for Efficient Computer-use Agents](https://arxiv.org/abs/2604.27151)** · `arXiv cs.AI`
+**3. [Open Design: Use Your Coding Agent as a Design Engine](https://github.com/nexu-io/open-design)** · `HackerNews`
 
-逐步优化代理效率，决定电脑操作型 Agent 能否真正落地。
+编码代理开始进入设计环节，意味着开发工作流边界正在外扩。
 
-**4. [Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks](https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/)** · `TechCrunch AI`
+**4. [The agent harness belongs outside the sandbox](https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox)** · `HackerNews`
 
-机密网络部署 AI 释放强信号，企业私有化与合规需求会加速。
+Agent 不该困在沙箱里，这关系到真实生产任务的可执行性。
 
-**5. [Microsoft wants lawyers to trust its new AI agent in Word documents](https://www.theverge.com/news/921944/microsoft-word-legal-agent-ai)** · `The Verge AI`
+**5. [Unpacking Vibe Coding: Help-Seeking Processes in Student-AI Interactions While Programming](https://arxiv.org/abs/2604.27134)** · `arXiv cs.AI`
 
-法律文档场景若被验证，将推动高风险办公流程接入 AI。
+学生如何向 AI 求助，能反向启发更好的编程助手产品设计。
 
-**6. [Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI](https://arxiv.org/abs/2604.27096)** · `arXiv cs.AI`
+**6. [AI-generated actors and scripts are now ineligible for Oscars](https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/)** · `TechCrunch AI`
 
-自愈式多智能体做 ML 流水线，可能重塑 AutoML 工程范式。
+内容行业开始给生成式 AI 划红线，开发者需关注合规前置。
 
-**7. [ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet](https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/)** · `TechCrunch AI`
+**7. [The best AI dictation apps, tested and ranked](https://techcrunch.com/2026/05/02/the-best-ai-powered-dictation-apps-of-2025/)** · `TechCrunch AI`
 
-区域采用差异提醒团队：多模态产品增长不只靠模型能力。
+语音输入正成为 AI 交互入口，工具选型会影响团队工作效率。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[farion1231/cc-switch: A cross-platform desktop All-in-One assistant tool for ...](https://github.com/farion1231/cc-switch)** · `GitHub Trending`
+**[juanfont/headscale: An open source, self-hosted implementation of the Tailsca...](https://github.com/juanfont/headscale)** · `GitHub Trending`
 
-统一管理 Claude Code、Codex 等多助手，适合比较不同编码代理的真实产出。
+headscale 让团队以开源、自托管方式获得类似 Tailscale 的组网能力，适合重视隐私与控制权的开发环境。
 
-**[go-gitea/gitea: Git with a cup of tea! Painless self-hosted all-in-one softwa...](https://github.com/go-gitea/gitea)** · `GitHub Trending`
+**[wailsapp/wails: Create beautiful applications using Go](https://github.com/wailsapp/wails)** · `GitHub Trending`
 
-成熟自托管 DevOps 平台，正适合作为团队接入 AI 工作流的安全底座。
+Wails 用 Go 构建桌面应用，能帮助后端开发者以较低前端负担交付原生体验。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正改变软件工程的，不是会说代码的模型，而是能进入工作流、承担责任的代理。
+> 当 AI 从“回答问题”走向“执行任务”，真正的竞争力就落在工作流接入、权限边界与可靠性上。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🛠️ [Show HN: AI CAD Harness](https://fusion.adam.new/install) · `HackerNews`
-- 🔬 [End-to-end autonomous scientific discovery on a real optical platform](https://arxiv.org/abs/2604.27092) · `arXiv cs.AI`
-- 💡 [GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode](https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-interactive-v-non-interactive-mode/) · `GitHub Blog`
-- 📊 [Meta buys robotics startup to bolster its humanoid AI ambitions](https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/) · `TechCrunch AI`
-- 🛠️ [TRUST: A Framework for Decentralized AI Service v.0.1](https://arxiv.org/abs/2604.27132) · `arXiv cs.AI`
-- 🔬 [The gay jailbreak technique](https://github.com/Exocija/ZetaLib/blob/main/The%20Gay%20Jailbreak/The%20Gay%20Jailbreak.md) · `HackerNews`
-- 📊 [Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic](https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia) · `The Verge AI`
-- 📊 [Meta is running get-rich-quick ads for its AI tools](https://www.theverge.com/ai-artificial-intelligence/915970/meta-manus-ai-ads-website-slop) · `The Verge AI`
-- 🚀 [Gemini is rolling out to cars with Google built-in](https://www.theverge.com/tech/921117/google-gemini-ai-assistant-cars-upgrade) · `The Verge AI`
-- 📊 [Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell](https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/) · `TechCrunch AI`
+- 🔬 [Compositional Meta-Learning for Mitigating Task Heterogeneity in Physics-Informed Neural Networks](https://arxiv.org/abs/2604.26999) · `arXiv cs.AI`
+- 🔬 [Binary Spiking Neural Networks as Causal Models](https://arxiv.org/abs/2604.27007) · `arXiv cs.AI`
 
 
 ---
@@ -87,9 +79,9 @@
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 10 源 | 119 篇 | 32 篇 | 20 篇 | **10 篇** |
+| 10 源 | 118 篇 | 14 篇 | 12 篇 | **10 篇** |
 
-*生成于 2026-05-02 10:28 UTC+8*
+*生成于 2026-05-03 10:37 UTC+8*
 
 ## 📚 往期简报
 
