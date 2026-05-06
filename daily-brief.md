@@ -6,79 +6,81 @@
 
 ---
 
-## 📅 2026-05-05 周二
+## 📅 2026-05-06 周三
 
 ### 📌 今日焦点
 
-**[openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending` ⭐
+**[GPT-5.5 Instant System Card](https://openai.com/index/gpt-5-5-instant-system-card)** · `OpenAI Blog` ⭐
 
-> Codex 以轻量终端代理形态进入开发工作流，说明 AI 编码助手正从聊天窗口走向可组合、可脚本化的真实生产环境。开发者应尽快评估它在本地代码库、CI 与终端自动化中的适配性，并关注权限边界、可审计性与团队协作流程。
+> GPT-5.5 Instant 的系统卡之所以重要，是因为它直接影响开发者对新默认能力、风险边界与上线可行性的判断。建议团队尽快重跑关键提示词、评估幻觉与延迟表现，并据此更新路由、评测与安全策略。
 
+  📎 延伸: [OpenAI Blog](https://openai.com/index/gpt-5-5-instant)
 
 ---
 
 ### 🔥 热点速览
 
-**1. [warpdotdev/warp: Warp is an agentic development environment, born out of the ...](https://github.com/warpdotdev/warp)** · `GitHub Trending`
+**1. [OpenAI claims ChatGPT’s new default model hallucinates way less](https://www.theverge.com/ai-artificial-intelligence/924225/openai-chatgpt-default-model-gpt-5-5-instant)** · `The Verge AI`
 
-终端正成为 AI 原生 IDE，值得关注下一代开发环境范式。
+默认模型更少幻觉，直接影响生产环境容错与提示工程成本。
 
-**2. [mudler/LocalAI: LocalAI is the open-source AI engine. Run any model - LLMs, v...](https://github.com/mudler/LocalAI)** · `GitHub Trending`
+  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/)
+**2. [Google Chrome silently installs a 4 GB AI model on your device without consent](https://www.thatprivacyguy.com/blog/chrome-silent-nano-install/)** · `HackerNews`
 
-本地多模态推理栈成熟，关系到成本、隐私与离线可用性。
+端侧模型静默落地，提醒开发者重视本地算力、隐私与分发透明度。
 
-**3. [How OpenAI delivers low-latency voice AI at scale](https://openai.com/index/delivering-low-latency-voice-ai-at-scale/)** · `HackerNews`
+**3. [Google, Microsoft, and xAI will allow the US government to review their new AI models](https://www.theverge.com/ai-artificial-intelligence/924017/google-microsoft-xai-government-review)** · `The Verge AI`
 
-低延迟语音架构经验可直接影响实时助手与语音产品设计。
+政府预审机制可能改变大模型发布节奏与合规门槛。
 
-**4. [Anthropic and OpenAI are both launching joint ventures for enterprise AI services](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/)** · `TechCrunch AI`
+**4. [GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents](https://arxiv.org/abs/2604.26752)** · `HackerNews`
 
-大模型厂商下场企业服务，预示交付模式将从卖模型转向卖结果。
+原生多模态代理底座演进，值得关注下一代 agent 架构方向。
 
-**5. [Reduce friction and latency for long-running jobs with Webhooks in Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/)** · `Google AI Blog`
+**5. [Workspace-Bench 1.0: Benchmarking AI Agents on Workspace Tasks with Large-Scale File Dependencies](https://huggingface.co/papers/2605.03596)** · `HuggingFace Papers`
 
-长任务回调机制虽小，却能显著改善 Agent 系统可靠性。
+真实 workspace 基准更接近企业落地，能暴露代理的长链路短板。
 
-**6. [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136)** · `arXiv cs.AI`
+**6. [Understanding Emergent Misalignment via Feature Superposition Geometry](https://arxiv.org/abs/2605.00842)** · `arXiv cs.AI`
 
-工具调用并非免费午餐，Agent 成本与收益需要重新量化。
+失配机理研究有助于把对齐从经验调参推进到可解释工程。
 
-**7. [AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?](https://arxiv.org/abs/2605.00334)** · `arXiv cs.AI`
+**7. [Pennsylvania sues Character.AI after a chatbot allegedly posed as a doctor](https://techcrunch.com/2026/05/05/pennsylvania-sues-character-ai-after-a-chatbot-allegedly-posed-as-a-doctor/)** · `TechCrunch AI`
 
-小模型工具使用能力提升，可能重写 Agent 的性价比曲线。
+医疗角色冒充诉讼表明高风险场景的产品责任正在收紧。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[Agent Skills](https://addyosmani.com/blog/agent-skills/)** · `HackerNews`
+**[OpenSeeker-v2: Pushing the Limits of Search Agents with Informative and High-Difficulty Trajectories](https://huggingface.co/papers/2605.04036)** · `HuggingFace Papers`
 
-聚焦 Agent 能力拆解，适合作为构建任务型智能体的设计参考。
+OpenSeeker-v2 提供高难轨迹数据与搜索代理思路，适合做 agent 训练和评测参考。
 
-**[Token Arena: A Continuous Benchmark Unifying Energy and Cognition in AI Inference](https://arxiv.org/abs/2605.00300)** · `arXiv cs.AI`
+**[ClinicBot: A Guideline-Grounded Clinical Chatbot with Prioritized Evidence RAG and Verifiable Citations](https://arxiv.org/abs/2605.00846)** · `arXiv cs.AI`
 
-把能耗与认知表现放进同一基准，适合做推理部署选型。
+ClinicBot 展示了可验证引用的医疗 RAG 设计，对高可信问答系统很有借鉴价值。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正有价值的 AI，不是会回答问题，而是能安全地接入你的工作流并持续交付结果。
+> 真正拉开 AI 团队差距的，不是会不会调用模型，而是能否把不确定性工程化。
 
 ---
 
 ### 📎 延伸阅读
 
-- 📊 [Sierra Raises $950M at $15B Valuation](https://sierra.ai/blog/better-customer-experiences-built-on-sierra) · `HackerNews`
-- 🔬 [In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors](https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/) · `TechCrunch AI`
-- 📊 [The latest AI news we announced in April 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/) · `Google AI Blog`
-- 📊 [Image AI models now drive app growth, beating chatbot upgrades](https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/) · `TechCrunch AI`
-- 🚀 [DoorDash adds AI tools to speed up merchant onboarding, edit photos of dishes](https://techcrunch.com/2026/05/04/doordash-adds-ai-tools-to-speed-up-merchant-onboarding-edit-photos-of-dishes/) · `TechCrunch AI`
-- 🔬 [Minimal, Local, Causal Explanations for Jailbreak Success in Large Language Models](https://arxiv.org/abs/2605.00123) · `arXiv cs.AI`
-- 🔬 [ARMOR 2025: A Military-Aligned Benchmark for Evaluating Large Language Model Safety Beyond Civilian Contexts](https://arxiv.org/abs/2605.00245) · `arXiv cs.AI`
-- 💡 [Let's talk about LLMs](https://www.b-list.org/weblog/2026/apr/09/llms/) · `HackerNews`
-- 📊 [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit) · `The Verge AI`
-- 📊 [OpenAI’s cozy partner Cerebras is on track for a blockbuster IPO](https://techcrunch.com/2026/05/04/openais-cozy-partner-cerebras-is-on-track-for-a-blockbuster-ipo/) · `TechCrunch AI`
+- 📊 [Zuckerberg 'Personally Authorized and Encouraged' Meta's Copyright Infringement](https://variety.com/2026/digital/news/meta-ai-mark-zuckerberg-copyright-infringement-lawsuit-publishers-scott-turow-1236738383/) · `HackerNews`
+- 🚀 [Agents for financial services and insurance](https://www.anthropic.com/news/finance-agents) · `HackerNews`
+- 🚀 [Apple could let you pick a favorite AI model in iOS 27](https://www.theverge.com/tech/924515/apple-intelligence-third-party-chatbot-extensions-ios-27) · `The Verge AI`
+- 💡 [Lessons for Agentic Coding: What should we do when code is cheap?](https://www.dbreunig.com/2026/05/04/10-lessons-for-agentic-coding.html) · `HackerNews`
+- 🔬 [A Benchmark for Interactive World Models with a Unified Action Generation Framework](https://huggingface.co/papers/2605.03941) · `HuggingFace Papers`
+- 📊 [OpenAI and PwC collaborate to reimagine the office of the CFO](https://openai.com/index/openai-pwc-finance-collaboration) · `OpenAI Blog`
+- 🚀 [Google Home&#8217;s Gemini AI can handle more complicated requests](https://www.theverge.com/tech/924755/google-home-gemini-3-1-upgrade) · `The Verge AI`
+- 📊 [Apple agrees to pay iPhone owners $250 million for not delivering AI Siri](https://www.theverge.com/tech/924706/apple-iphone-siri-intelligence-class-action-lawsuit-settlement) · `The Verge AI`
+- 📊 [SAP bets $1.16B on 18-month-old German AI lab and says yes to NemoClaw](https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/) · `TechCrunch AI`
+- 🛠️ [Etsy launches its app within ChatGPT as it continues its AI push](https://techcrunch.com/2026/05/05/etsy-launches-its-app-within-chatgpt-as-it-continues-its-ai-push/) · `TechCrunch AI`
 
 
 ---
@@ -87,9 +89,9 @@
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 10 源 | 120 篇 | 32 篇 | 20 篇 | **10 篇** |
+| 10 源 | 116 篇 | 50 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-05 10:30 UTC+8*
+*生成于 2026-05-06 10:35 UTC+8*
 
 ## 📚 往期简报
 
