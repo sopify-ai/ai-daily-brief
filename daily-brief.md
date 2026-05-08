@@ -6,80 +6,79 @@
 
 ---
 
-## 📅 2026-05-07 周四
+## 📅 2026-05-08 周五
 
 ### 📌 今日焦点
 
-**[Agents can now create Cloudflare accounts, buy domains, and deploy](https://blog.cloudflare.com/agents-stripe-projects/)** · `HackerNews` ⭐
+**[AlphaEvolve: Gemini-powered coding agent scaling impact across fields](https://deepmind.google/blog/alphaevolve-impact/)** · `HackerNews` ⭐
 
-> 这很重要，因为它把 AI Agent 从“会生成代码”推进到“能独立完成注册、购域名和部署”的真实执行层，意味着自动化正在直接进入互联网基础设施操作。开发者应立即评估权限边界、审计日志、人机确认和回滚机制，别让 Agent 能部署却不能被安全治理。 
+> AlphaEvolve 把 Gemini 驱动的编码代理从写代码推向跨学科问题求解，说明 AI agent 正在从开发辅助演进为通用研发基础设施。开发者应立即评估可将 agent 接入的高价值闭环任务，并优先建立评测、回滚与人类审查机制。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [Higher usage limits for Claude and a compute deal with SpaceX](https://www.anthropic.com/news/higher-limits-spacex)** · `HackerNews`
+**1. [Advancing voice intelligence with new models in the API](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api)** · `OpenAI Blog` ⭐
 
-算力与额度直接决定开发者能否把原型跑成生产。
+语音模型进 API，意味着多模态交互将更快进入生产应用。
 
-**2. [Terminus-4B: Can a Smaller Model Replace Frontier LLMs at Agentic Execution Tasks?](https://arxiv.org/abs/2605.03195)** · `arXiv cs.AI`
+**2. [Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber](https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber)** · `OpenAI Blog` ⭐
 
-小模型若能胜任 Agent 执行，成本结构会被重写。
+GPT-5.5-Cyber 预示安全能力正成为模型产品化的重要赛道。
 
-**3. [Validating agentic behavior when “correct” isn’t deterministic](https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic/)** · `GitHub Blog`
+**3. [Agents need control flow, not more prompts](https://bsuh.bearblog.dev/agents-need-control-flow/)** · `HackerNews`
 
-Agent 不可完全确定时，验证框架比模型分数更关键。
+Agent 工程瓶颈已从提示词转向可控执行流，值得尽快补课。
 
-**4. [Vibe coding and agentic engineering are getting closer than I'd like](https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/)** · `HackerNews`
+**4. [DeepSeek 4 Flash local inference engine for Metal](https://github.com/antirez/ds4)** · `HackerNews`
 
-工程边界在变化，团队需要重写代码评审与责任分工。
+本地 Metal 推理提速，让 Mac 端私有部署更具现实可行性。
 
-**5. [Google&#8217;s AI search summaries will now quote Reddit](https://www.theverge.com/tech/924993/google-ai-search-mode-overviews-update-reddit-links)** · `The Verge AI`
+**5. [Natural Language Autoencoders: Turning Claude's Thoughts into Text](https://www.anthropic.com/research/natural-language-autoencoders)** · `HackerNews`
 
-搜索流量入口重排，内容分发与 SEO 策略都得调整。
+把模型“思维”转成文本，可能重塑可解释性与调试方式。
 
-  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/05/06/google-updates-ai-search-to-include-expert-advice-from-reddit-and-other-web-forums/)
-**6. [vLLM V0 to V1: Correctness Before Corrections in RL](https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections)** · `Hugging Face Blog`
+**6. [Improving token efficiency in GitHub Agentic Workflows](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/)** · `GitHub Blog`
 
-做 RL 或推理服务的团队，应关注 vLLM 的正确性演进。
+Token 效率直接决定 agent 成本结构，是落地前必看的工程指标。
 
-**7. [DeepSeek could hit $45B valuation from its first investment round](https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/)** · `TechCrunch AI`
+**7. [Agent pull requests are everywhere. Here’s how to review them.](https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them/)** · `GitHub Blog`
 
-资本流向预示开源模型生态与价格战还会继续升级。
+Agent 生成 PR 将成常态，团队需尽快升级代码审查流程。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[Show HN: Tilde.run – Agent sandbox with a transactional, versioned filesystem](https://tilde.run/)** · `HackerNews`
+**[openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending`
 
-为 Agent 提供可事务回滚、可版本化的沙箱文件系统，特别适合做安全实验与可复现执行。
+终端中的轻量级 coding agent，上手门槛低，适合快速验证 AI 编码工作流。
 
-**[Chrome’s AI features may be hogging 4GB of your computer storage](https://www.theverge.com/tech/924933/google-chrome-4gb-gemini-nano-ai-features)** · `The Verge AI`
+**[go-gitea/gitea: Git with a cup of tea! Painless self-hosted all-in-one softwa...](https://github.com/go-gitea/gitea)** · `GitHub Trending`
 
-提醒开发者关注端侧 AI 的真实资源成本，部署浏览器内 AI 时别忽视存储预算。
+成熟的自托管研发平台，适合希望掌控代码、CI 与协作数据的团队。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正改变软件的，不是模型会说什么，而是它被允许替你做什么。
+> 真正可规模化的 AI，不是会回答更多问题，而是能在可控流程里稳定完成任务。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🔬 [Learning the Integral of a Diffusion Model](https://sander.ai/2026/05/06/flow-maps.html) · `HackerNews`
-- 🔬 [Programmatic Context Augmentation for LLM-based Symbolic Regression](https://arxiv.org/abs/2605.03101) · `arXiv cs.AI`
-- 🔬 [D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models](https://huggingface.co/papers/2605.05204) · `HuggingFace Papers`
-- 🚀 [Khosla-backed robotics startup Genesis AI has gone full stack, demo shows](https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/) · `TechCrunch AI`
-- 🔬 [Stable Agentic Control: Tool-Mediated LLM Architecture for Autonomous Cyber Defense](https://arxiv.org/abs/2605.03034) · `arXiv cs.AI`
-- 🔬 [Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents](https://arxiv.org/abs/2605.03159) · `arXiv cs.AI`
-- 🔬 [StableI2I: Spotting Unintended Changes in Image-to-Image Transition](https://huggingface.co/papers/2605.04453) · `HuggingFace Papers`
-- 📊 [Introducing ChatGPT Futures: Class of 2026](https://openai.com/index/introducing-chatgpt-futures-class-of-2026) · `OpenAI Blog`
-- 📊 [How frontier enterprises are building an AI advantage](https://openai.com/index/introducing-b2b-signals) · `OpenAI Blog`
-- 📊 [Is xAI a neocloud now?](https://techcrunch.com/2026/05/06/is-xai-a-neocloud-now/) · `TechCrunch AI`
+- 🛠️ [farion1231/cc-switch: A cross-platform desktop All-in-One assistant tool for ...](https://github.com/farion1231/cc-switch) · `GitHub Trending`
+- 🛠️ [OpenAI launches new voice intelligence features in its API](https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/) · `TechCrunch AI`
+- 🛠️ [moby/moby: The Moby Project - a collaborative project for the container ecosy...](https://github.com/moby/moby) · `GitHub Trending`
+- 💡 [Making LLM Training Faster with Unsloth and NVIDIA](https://unsloth.ai/blog/nvidia-collab) · `HackerNews`
+- 🔬 [UniPool: A Globally Shared Expert Pool for Mixture-of-Experts](https://huggingface.co/papers/2605.06665) · `HuggingFace Papers`
+- 🔬 [Continuous Latent Diffusion Language Model](https://huggingface.co/papers/2605.06548) · `HuggingFace Papers`
+- 🔬 [AI Co-Mathematician: Accelerating Mathematicians with Agentic AI](https://huggingface.co/papers/2605.06651) · `HuggingFace Papers`
+- 🔬 [Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key](https://huggingface.co/papers/2605.06638) · `HuggingFace Papers`
+- 🛠️ [Perplexity’s Personal Computer is now available to everyone on Mac](https://techcrunch.com/2026/05/07/perplexitys-personal-computer-is-now-available-everyone-on-mac/) · `TechCrunch AI`
+- 🛠️ [How Anthropic’s Mythos has rewritten Firefox’s approach to cybersecurity](https://techcrunch.com/2026/05/07/how-anthropics-mythos-has-rewritten-firefoxs-approach-to-cybersecurity/) · `TechCrunch AI`
 
 
 ---
@@ -88,9 +87,9 @@ Agent 不可完全确定时，验证框架比模型分数更关键。
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 10 源 | 116 篇 | 47 篇 | 20 篇 | **10 篇** |
+| 11 源 | 137 篇 | 67 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-07 10:37 UTC+8*
+*生成于 2026-05-08 10:43 UTC+8*
 
 ## 📚 往期简报
 
