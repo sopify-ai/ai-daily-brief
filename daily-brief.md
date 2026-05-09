@@ -6,79 +6,75 @@
 
 ---
 
-## 📅 2026-05-08 周五
+## 📅 2026-05-09 周六
 
 ### 📌 今日焦点
 
-**[AlphaEvolve: Gemini-powered coding agent scaling impact across fields](https://deepmind.google/blog/alphaevolve-impact/)** · `HackerNews` ⭐
+**[Running Codex safely at OpenAI](https://openai.com/index/running-codex-safely)** · `OpenAI Blog`
 
-> AlphaEvolve 把 Gemini 驱动的编码代理从写代码推向跨学科问题求解，说明 AI agent 正在从开发辅助演进为通用研发基础设施。开发者应立即评估可将 agent 接入的高价值闭环任务，并优先建立评测、回滚与人类审查机制。
+> OpenAI 直接公开 Codex 的安全运行机制，说明“让 AI 上生产”已经从能力竞赛进入治理竞赛。开发者应优先关注权限隔离、审计日志和人工确认链路，把 agent 安全设计前置到架构层。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [Advancing voice intelligence with new models in the API](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api)** · `OpenAI Blog` ⭐
+**1. [Show HN: Git for AI Agents](https://github.com/regent-vcs/re_gent)** · `HackerNews`
 
-语音模型进 API，意味着多模态交互将更快进入生产应用。
+给 AI Agent 引入 Git 思维，意味着代码回滚、分支和审计将成为 agent 工作流标配。
 
-**2. [Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber](https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber)** · `OpenAI Blog` ⭐
+**2. [OpenAI's WebRTC problem](https://moq.dev/blog/webrtc-is-the-problem/)** · `HackerNews`
 
-GPT-5.5-Cyber 预示安全能力正成为模型产品化的重要赛道。
+WebRTC 卡住 OpenAI 的实时能力上限，说明模型之外，传输链路同样决定体验。
 
-**3. [Agents need control flow, not more prompts](https://bsuh.bearblog.dev/agents-need-control-flow/)** · `HackerNews`
+**3. [LCM: Lossless Context Management](https://arxiv.org/abs/2605.04050)** · `arXiv cs.AI`
 
-Agent 工程瓶颈已从提示词转向可控执行流，值得尽快补课。
+长上下文不只拼长度，更在拼如何低成本保留关键信息。
 
-**4. [DeepSeek 4 Flash local inference engine for Metal](https://github.com/antirez/ds4)** · `HackerNews`
+**4. [Parallel Prefix Verification for Speculative Generation](https://arxiv.org/abs/2605.04263)** · `arXiv cs.AI`
 
-本地 Metal 推理提速，让 Mac 端私有部署更具现实可行性。
+推测式生成要过验证这一关，才能从“快”走向“可用”。
 
-**5. [Natural Language Autoencoders: Turning Claude's Thoughts into Text](https://www.anthropic.com/research/natural-language-autoencoders)** · `HackerNews`
+**5. [Teaching Claude Why](https://www.anthropic.com/research/teaching-claude-why)** · `HackerNews`
 
-把模型“思维”转成文本，可能重塑可解释性与调试方式。
+让 Claude 解释“为什么”，是把模型从答题器推向可审计推理器。
 
-**6. [Improving token efficiency in GitHub Agentic Workflows](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/)** · `GitHub Blog`
+**6. [Chrome 会静默安装一个 4GB 的 AI 模型](https://www.thatprivacyguy.com/blog/chrome-silent-nano-install/)** · `阮一峰周刊`
 
-Token 效率直接决定 agent 成本结构，是落地前必看的工程指标。
+浏览器静默装 4GB 模型，预示 AI 正在从云端回流到端侧。
 
-**7. [Agent pull requests are everywhere. Here’s how to review them.](https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them/)** · `GitHub Blog`
+**7. [AI is breaking two vulnerability cultures](https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures)** · `HackerNews`
 
-Agent 生成 PR 将成常态，团队需尽快升级代码审查流程。
+漏洞文化被 AI 改写，开发流程里的默认信任正在失效。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[openai/codex: Lightweight coding agent that runs in your terminal](https://github.com/openai/codex)** · `GitHub Trending`
+**[Agent Island: A Saturation- and Contamination-Resistant Benchmark from Multiagent Games](https://arxiv.org/abs/2605.04312)** · `arXiv cs.AI`
 
-终端中的轻量级 coding agent，上手门槛低，适合快速验证 AI 编码工作流。
-
-**[go-gitea/gitea: Git with a cup of tea! Painless self-hosted all-in-one softwa...](https://github.com/go-gitea/gitea)** · `GitHub Trending`
-
-成熟的自托管研发平台，适合希望掌控代码、CI 与协作数据的团队。
+多智能体基准能直接检验系统在污染与对抗下是否真可靠。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正可规模化的 AI，不是会回答更多问题，而是能在可控流程里稳定完成任务。
+> 当 AI 开始写代码，最稀缺的不再是生成能力，而是可控性。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🛠️ [farion1231/cc-switch: A cross-platform desktop All-in-One assistant tool for ...](https://github.com/farion1231/cc-switch) · `GitHub Trending`
-- 🛠️ [OpenAI launches new voice intelligence features in its API](https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/) · `TechCrunch AI`
-- 🛠️ [moby/moby: The Moby Project - a collaborative project for the container ecosy...](https://github.com/moby/moby) · `GitHub Trending`
-- 💡 [Making LLM Training Faster with Unsloth and NVIDIA](https://unsloth.ai/blog/nvidia-collab) · `HackerNews`
-- 🔬 [UniPool: A Globally Shared Expert Pool for Mixture-of-Experts](https://huggingface.co/papers/2605.06665) · `HuggingFace Papers`
-- 🔬 [Continuous Latent Diffusion Language Model](https://huggingface.co/papers/2605.06548) · `HuggingFace Papers`
-- 🔬 [AI Co-Mathematician: Accelerating Mathematicians with Agentic AI](https://huggingface.co/papers/2605.06651) · `HuggingFace Papers`
-- 🔬 [Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key](https://huggingface.co/papers/2605.06638) · `HuggingFace Papers`
-- 🛠️ [Perplexity’s Personal Computer is now available to everyone on Mac](https://techcrunch.com/2026/05/07/perplexitys-personal-computer-is-now-available-everyone-on-mac/) · `TechCrunch AI`
-- 🛠️ [How Anthropic’s Mythos has rewritten Firefox’s approach to cybersecurity](https://techcrunch.com/2026/05/07/how-anthropics-mythos-has-rewritten-firefoxs-approach-to-cybersecurity/) · `TechCrunch AI`
+- 🔬 [EMO: Pretraining mixture of experts for emergent modularity](https://huggingface.co/blog/allenai/emo) · `Hugging Face Blog`
+- 📊 [Microsoft was worried OpenAI would run off to Amazon and ‘shit-talk’ Azure](https://www.theverge.com/report/926771/microsoft-openai-amazon-worries-shit-talk-azure) · `The Verge AI`
+- 📊 [Cloudflare says AI made 1,100 jobs obsolete, even as revenue hit a record high](https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/) · `TechCrunch AI`
+- 🔬 [The Scaling Properties of Implicit Deductive Reasoning in Transformers](https://arxiv.org/abs/2605.04330) · `arXiv cs.AI`
+- 🔬 [AI 预检](https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses) · `阮一峰周刊`
+- 📊 [Mira Murati’s deposition pulled back the curtain on Sam Altman’s ouster](https://www.theverge.com/ai-artificial-intelligence/926383/mira-murati-sam-altman-musk-trial-ouster) · `The Verge AI`
+- 🚀 [ChatGPT&#8217;s &#8216;Trusted Contact&#8217; will alert loved ones of safety concerns](https://www.theverge.com/ai-artificial-intelligence/925874/chatgpt-trusted-contact-emergency-self-harm-notification) · `The Verge AI`
+- 📊 [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit) · `The Verge AI`
+- 📊 [Voi founders’ new AI startup Pit has become the latest rising star out of Stockholm](https://techcrunch.com/2026/05/07/voi-founders-new-ai-startup-pit-has-become-the-latest-rising-star-out-of-stockholm/) · `TechCrunch AI`
+- 🚀 [OpenAI introduces new ‘Trusted Contact’ safeguard for cases of possible self-harm](https://techcrunch.com/2026/05/07/openai-introduces-new-trusted-contact-safeguard-for-cases-of-possible-self-harm/) · `TechCrunch AI`
 
 
 ---
@@ -87,9 +83,9 @@ Agent 生成 PR 将成常态，团队需尽快升级代码审查流程。
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 137 篇 | 67 篇 | 20 篇 | **10 篇** |
+| 11 源 | 137 篇 | 41 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-08 10:43 UTC+8*
+*生成于 2026-05-09 10:36 UTC+8*
 
 ## 📚 往期简报
 
