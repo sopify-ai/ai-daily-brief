@@ -6,80 +6,79 @@
 
 ---
 
-## 📅 2026-05-12 周二
+## 📅 2026-05-13 周三
 
 ### 📌 今日焦点
 
-**[OpenAI just released its answer to Claude Mythos](https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai)** · `The Verge AI`
+**[GitHub Copilot individual plans: Introducing flex allotments in Pro and Pro+, and a new Max plan](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/)** · `GitHub Blog`
 
-> 这条最值得关注，因为头部模型厂商对标 Claude 的新品往往会直接改变应用能力边界、API 选型和推理成本结构。开发者应尽快评测其在长上下文、工具调用与实际业务任务上的表现，并准备多模型路由与回退方案。
+> GitHub 直接调整 Copilot 个人订阅与配额，说明 AI 编程助手正从“尝鲜产品”进入精细化分层经营阶段，影响全球开发者的日常成本与工作流。开发者现在应立即复盘自身 Copilot 使用强度，按代码生成、评审和 Agent 需求选择 Pro、Pro+ 或 Max，并建立团队级使用预算。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [mudler/LocalAI: LocalAI is the open-source AI engine. Run any model - LLMs, v...](https://github.com/mudler/LocalAI)** · `GitHub Trending`
+**1. [Google brings agentic AI and vibe-coded widgets to Android](https://techcrunch.com/2026/05/12/google-brings-agentic-ai-and-vibe-coded-widgets-to-android/)** · `TechCrunch AI`
 
-本地多模态统一引擎成熟，私有化部署与成本控制更具可行性。
+Android 代理化升级会重塑移动端 AI 入口，应用集成策略该尽早调整。
 
-**2. [CASCADE: Case-Based Continual Adaptation for Large Language Models During Deployment](https://arxiv.org/abs/2605.06702)** · `arXiv cs.AI`
+**2. [Gemini&#8217;s latest updates are all about controlling your phone](https://www.theverge.com/tech/928724/gemini-intelligence-android-io-autofill)** · `The Verge AI`
 
-持续学习走向部署现场，关系到模型上线后的真实适应能力。
+Gemini 深入手机控制层，意味着系统级自动化能力将快速普及。
 
-**3. [Weblica: Scalable and Reproducible Training Environments for Visual Web Agents](https://arxiv.org/abs/2605.06761)** · `arXiv cs.AI`
+**3. [Google adds Gemini-powered dictation to Gboard, which could be bad news for dictation startups](https://techcrunch.com/2026/05/12/google-adds-gemini-powered-dictation-to-gboard-which-could-be-bad-news-for-dictation-startups/)** · `TechCrunch AI`
 
-Web Agent 缺少可靠训练场，这类基础设施决定可复现性上限。
+输入法被大模型重做后，语音与文本入口类产品将承压。
 
-**4. [Google says criminal hackers used AI to find a major software flaw](https://www.nytimes.com/2026/05/11/us/politics/google-hackers-attack-ai.html)** · `HackerNews`
+**4. [Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria](https://arxiv.org/abs/2605.08354)** · `arXiv cs.AI`
 
-AI 已进入攻防两端，安全团队需把模型纳入漏洞管理流程。
+多模态奖励从偏好走向显式标准，直接关系模型评测与对齐方法。
 
-  📎 延伸: [The Verge AI](https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped)
-**5. [More Thinking, More Bias: Length-Driven Position Bias in Reasoning Models](https://arxiv.org/abs/2605.06672)** · `arXiv cs.AI`
+**5. [δ-mem: Efficient Online Memory for Large Language Models](https://huggingface.co/papers/2605.12357)** · `HuggingFace Papers`
 
-推理更长不一定更准，产品需警惕“思考增益”背后的偏差。
+在线记忆效率若突破，长上下文 Agent 的成本与体验都会改写。
 
-**6. [GM just laid off hundreds of IT workers to hire those with stronger AI skills](https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/)** · `TechCrunch AI`
+**6. [Reward Hacking in Rubric-Based Reinforcement Learning](https://huggingface.co/papers/2605.12474)** · `HuggingFace Papers`
 
-企业招聘转向 AI 复合技能，开发者职业结构正在被重写。
+奖励黑客仍是 RL 落地痛点，不理解它就难做可靠训练。
 
-**7. [Postmortem: TanStack npm supply-chain compromise](https://tanstack.com/blog/npm-supply-chain-compromise-postmortem)** · `HackerNews`
+**7. [The AI legal services industry is heating up — Anthropic is getting in on the action](https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/)** · `TechCrunch AI`
 
-供应链安全仍是工程底线，AI 时代更不能忽视依赖治理。
+AI 法律服务升温，垂直行业 Agent 的合规与交付能力成胜负手。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[ruvnet/RuView: π RuView turns commodity WiFi signals into real-time spatial i...](https://github.com/ruvnet/RuView)** · `GitHub Trending`
+**[Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model](https://github.com/cactus-compute/needle)** · `HackerNews`
 
-用普通 WiFi 做空间感知与生命体征监测，适合关注边缘智能与环境感知的开发者。
+26M 小模型复现 Gemini 工具调用思路，适合关注轻量 Agent 与端侧部署的开发者。
 
-**[Training an LLM in Swift, Part 1: Taking matrix mult from Gflop/s to Tflop/s](https://www.cocoawithlove.com/blog/matrix-multiplications-swift.html)** · `HackerNews`
+**[Show HN: Statewright – Visual state machines that make AI agents reliable](https://github.com/statewright/statewright)** · `HackerNews`
 
-从矩阵乘优化切入 LLM 训练性能，适合想补齐底层系统能力的工程师。
+用可视化状态机约束 Agent 流程，有助于提升复杂任务的可调试性与稳定性。
 
 ---
 
 ### 💡 今日洞察
 
-> AI 的下一场竞争，不是谁先会思考，而是谁先把思考安全、低成本地接入真实系统。
+> 真正有价值的 AI，不是更会说话，而是更可控、更可验证、也更能接入真实工作流。
 
 ---
 
 ### 📎 延伸阅读
 
-- 📊 [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit) · `The Verge AI`
-- 📊 [OpenAI launches DeployCo to help businesses build around intelligence](https://openai.com/index/openai-launches-the-deployment-company) · `OpenAI Blog`
-- 💡 [Building Blocks for Foundation Model Training and Inference on AWS](https://huggingface.co/blog/amazon/foundation-model-building-blocks) · `Hugging Face Blog`
-- 🔬 [Hidden Coalitions in Multi-Agent AI: A Spectral Diagnostic from Internal Representations](https://arxiv.org/abs/2605.06696) · `arXiv cs.AI`
-- 🔬 [When Does a Language Model Commit? A Finite-Answer Theory of Pre-Verbalization Commitment](https://arxiv.org/abs/2605.06723) · `arXiv cs.AI`
-- 🔬 [How ChatGPT adoption broadened in early 2026](https://openai.com/signals/research/2026q1-update) · `OpenAI Blog`
-- 📊 [Here&#8217;s what Mira Murati&#8217;s AI company is up to](https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model) · `The Verge AI`
-- 💡 [How enterprises are scaling AI](https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai) · `OpenAI Blog`
-- 🚀 [Digg tries again, this time as an AI news aggregator](https://techcrunch.com/2026/05/11/digg-tries-again-this-time-as-an-ai-news-aggregator/) · `TechCrunch AI`
-- 📊 [Can someone please explain whether Cloudflare blackmailed Canonical?](https://www.flyingpenguin.com/can-someone-please-explain-whether-cloudflare-blackmailed-canonical/) · `HackerNews`
+- 📊 [Medicare’s new payment model is built for AI, and most of the tech world has no idea](https://techcrunch.com/2026/05/12/medicares-new-payment-model-is-built-for-ai-and-most-of-the-tech-world-has-no-idea/) · `TechCrunch AI`
+- 🔬 [SkillLens: Adaptive Multi-Granularity Skill Reuse for Cost-Efficient LLM Agents](https://arxiv.org/abs/2605.08386) · `arXiv cs.AI`
+- 🔬 [CoCoDA: Co-evolving Compositional DAG for Tool-Augmented Agents](https://arxiv.org/abs/2605.08399) · `arXiv cs.AI`
+- 🚀 [Reimagining the mouse pointer for the AI era](https://deepmind.google/blog/ai-pointer/) · `HackerNews`
+- 🔬 [Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle for Language-Model Post-Training](https://huggingface.co/papers/2605.12483) · `HuggingFace Papers`
+- 💡 [How NVIDIA engineers and researchers build with Codex](https://openai.com/index/nvidia) · `OpenAI Blog`
+- 📊 [Sam Altman was winning on the stand, but it might not be enough](https://www.theverge.com/ai-artificial-intelligence/929129/sam-altman-testimony-elon-musk-openai-trial) · `The Verge AI`
+- 📊 [Parents say ChatGPT got their son killed with bad advice on party drugs](https://www.theverge.com/ai-artificial-intelligence/928691/openai-chatgpt-wrongful-death-overdose) · `The Verge AI`
+- 📊 [Sam Altman takes the stand in trial against Elon Musk](https://www.theverge.com/ai-artificial-intelligence/916975/altman-takes-stand-elon-musk-openai-trial) · `The Verge AI`
+- 🚀 [Everything Google announced at its Android Show, from Googlebooks to vibe-coded widgets](https://techcrunch.com/2026/05/12/everything-google-announced-at-its-android-show-from-googlebooks-to-vibe-coded-widgets/) · `TechCrunch AI`
 
 
 ---
@@ -88,9 +87,9 @@ AI 已进入攻防两端，安全团队需把模型纳入漏洞管理流程。
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 138 篇 | 36 篇 | 20 篇 | **10 篇** |
+| 11 源 | 134 篇 | 48 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-12 10:42 UTC+8*
+*生成于 2026-05-13 10:48 UTC+8*
 
 ## 📚 往期简报
 
