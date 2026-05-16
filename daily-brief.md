@@ -6,80 +6,76 @@
 
 ---
 
-## 📅 2026-05-15 周五
+## 📅 2026-05-16 周六
 
 ### 📌 今日焦点
 
-**[OpenAI says Codex is coming to your phone](https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/)** · `TechCrunch AI`
+**[Databricks brings GPT-5.5 to enterprise agent workflows](https://openai.com/index/databricks)** · `OpenAI Blog` ⭐
 
-> Codex 进入手机端，意味着 AI 编程从桌面工具升级为随时可调用的开发入口，开发工作流将进一步碎片化与移动化。开发者现在就该评估移动端代码生成、代码审阅和远程运维场景，提前设计权限控制、上下文同步与安全边界。
+> 企业级 Agent 正在从“能用”走向“可接入业务系统”，这类平台级合作会直接决定 AI 落地的入口和分发。开发者应优先评估现有工作流的权限边界、审计链路与可替换模型层。
 
 
 ---
 
 ### 🔥 热点速览
 
-**1. [Cerebras raises $5.5B, then stock pops $108%, in the first huge tech IPO of 2026](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/)** · `TechCrunch AI`
+**1. [Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context — Best Sub-100M Retrieval...](https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2)** · `Hugging Face Blog`
 
-算力公司融资与上市爆发，说明 AI 基础设施仍是最大确定性机会。
+开源多语向量模型补齐长上下文，检索和 RAG 方案又多了一个强竞争者。
 
-**2. [Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit)** · `The Verge AI`
+**2. [OpenAI now wants ChatGPT to access your bank accounts](https://www.theverge.com/ai-artificial-intelligence/931122/openai-chatgpt-financial-accounts-plaid-connection)** · `The Verge AI`
 
-OpenAI 控制权之争会影响模型路线、合作生态与 API 稳定预期。
+ChatGPT 触达金融账户意味着 AI 正在进入高风险高价值场景，权限设计会被放大检验。
 
-  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/05/14/what-the-jury-will-actually-decide-in-the-case-of-elon-musk-vs-sam-altman/)
-**3. [OpenAI is reportedly preparing legal action against Apple; it wouldn’t be the first partner to feel burned](https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/)** · `TechCrunch AI`
+  📎 延伸: [TechCrunch AI](https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/)
+**3. [YouTube is expanding its AI deepfake detection tool to all adult users](https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults)** · `The Verge AI`
 
-头部模型厂商与平台方博弈升级，开发者需警惕生态锁定风险。
+深伪检测下放到全民，说明内容可信验证会变成平台标配能力。
 
-**4. [Americans do not want AI data centers in their backyards](https://www.theverge.com/ai-artificial-intelligence/930477/ai-data-centers-gallup-survey-70-percent-opposition)** · `The Verge AI`
+**4. [ArXiv will ban researchers who upload papers full of AI slop](https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers)** · `The Verge AI`
 
-数据中心落地受阻，未来算力成本、区域部署与合规都会受影响。
+arXiv 反垃圾升级，预示 AI 论文生态将更看重可验证贡献而非“堆字数”。
 
-**5. [Think Twice, Act Once: Verifier-Guided Action Selection For Embodied Agents](https://arxiv.org/abs/2605.12620)** · `arXiv cs.AI`
+**5. [OpenAI keeps shuffling its executives in bid to win AI agent battle](https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle)** · `The Verge AI`
 
-具身智能开始强调验证器闭环，值得关注 Agent 决策可靠性范式。
+OpenAI 内部调兵遣将，反映 Agent 赛道竞争已从模型转向组织与产品化能力。
 
-**6. [Do Androids Dream of Breaking the Game? Systematically Auditing AI Agent Benchmarks with BenchJack](https://arxiv.org/abs/2605.12673)** · `arXiv cs.AI`
+**6. [Osaurus brings both local and cloud AI models to your Mac](https://techcrunch.com/2026/05/15/osaurus-brings-both-local-and-cloud-ai-models-to-your-mac/)** · `TechCrunch AI`
 
-基准被“刷榜”会误导选型，开发者应重视评测抗作弊能力。
+本地+云混合模型管理工具对 Mac 开发者很实用，降低多模型切换成本。
 
-**7. [DisaBench: A Participatory Evaluation Framework for Disability Harms in Language Models](https://arxiv.org/abs/2605.12702)** · `arXiv cs.AI`
+**7. [A 0-click exploit chain for the Pixel 10](https://projectzero.google/2026/05/pixel-10-exploit.html)** · `HackerNews`
 
-无障碍伤害评测正在进入主流，面向公众产品必须尽早纳入。
+Pixel 10 的 0-click 链提醒开发者：端侧 AI 与系统安全会一起成为攻击面。
 
 ---
 
 ### 🛠️ 今日工具
 
-**[Orchard: An Open-Source Agentic Modeling Framework](https://huggingface.co/papers/2605.15040)** · `HuggingFace Papers`
+**[Building a general-purpose accessibility agent—and what we learned in the process](https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/)** · `GitHub Blog`
 
-开源 Agent 建模框架，适合快速验证多代理/任务编排架构。
-
-**[boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli)** · `阮一峰周刊`
-
-CLI 形态贴近开发者日常终端工作流，便于把 Agent 接入现有流程。
+无障碍 Agent 的真实实践，能直接借鉴到复杂任务自动化与评测流程里。
 
 ---
 
 ### 💡 今日洞察
 
-> 真正拉开 AI 产品差距的，不是模型会不会回答，而是它能否在真实工作流里被安全地调用。
+> AI 的下一阶段，不是更会回答，而是更敢接入真实系统。
 
 ---
 
 ### 📎 延伸阅读
 
-- 🔬 [Revealing Interpretable Failure Modes of VLMs](https://arxiv.org/abs/2605.12674) · `arXiv cs.AI`
-- 🛠️ [MonkeyCode](https://github.com/chaitin/MonkeyCode/) · `阮一峰周刊`
-- 🛠️ [RTX 5090 and M4 MacBook Air: Can It Game?](https://scottjg.com/posts/2026-05-05-egpu-mac-gaming/) · `HackerNews`
-- 🛠️ [AI is making me dumb](https://jpain.io/god-damn-ai-is-making-me-dumb/) · `HackerNews`
-- 🛠️ [Codex is now in the ChatGPT mobile app](https://openai.com/index/work-with-codex-from-anywhere/) · `HackerNews`
-- 🛠️ [Ontario auditors find doctors' AI note takers routinely blow basic facts](https://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771) · `HackerNews`
-- 🛠️ [Have a Coherent AI Policy](https://brianmeeker.me/2026/05/14/have-a-coherent-ai-policy/) · `HackerNews`
-- 🛠️ [Darwin Family: MRI-Trust-Weighted Evolutionary Merging for Training-Free Scaling of Language-Model Reasoning](https://huggingface.co/papers/2605.14386) · `HuggingFace Papers`
-- 🛠️ [MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory](https://huggingface.co/papers/2605.15128) · `HuggingFace Papers`
-- 🛠️ [Warp-as-History: Generalizable Camera-Controlled Video Generation from One Training Video](https://huggingface.co/papers/2605.15182) · `HuggingFace Papers`
+- 🚀 [A new personal finance experience in ChatGPT](https://openai.com/index/personal-finance-chatgpt) · `OpenAI Blog`
+- 📊 [AI research papers are getting better, and it’s a big problem for scientists](https://www.theverge.com/ai-artificial-intelligence/930522/ai-research-papers-slop-peer-review-problem) · `The Verge AI`
+- 🛠️ [Sea's View on the Future of Agentic Software Development with Codex](https://openai.com/index/sea-david-chen) · `OpenAI Blog`
+- 📊 [Runway started by helping filmmakers — now it wants to beat Google at AI](https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-at-ai/) · `TechCrunch AI`
+- 🛠️ [Bun Rust rewrite: "codebase fails basic miri checks, allows for UB in safe rust"](https://github.com/oven-sh/bun/issues/30719) · `HackerNews`
+- 📊 [Amazon workers under pressure to up their AI usage are making up tasks](https://www.fastcompany.com/91541586/amazon-workers-pressured-to-up-ai-use-extraneous-tasks) · `HackerNews`
+- 📊 [What happens when AI starts building itself?](https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/) · `TechCrunch AI`
+- 🔬 [Macro-Action Based Multi-Agent Instruction Following through Value Cancellation](https://arxiv.org/abs/2605.12655) · `arXiv cs.AI`
+- 🔬 [Learning Transferable Latent User Preferences for Human-Aligned Decision Making](https://arxiv.org/abs/2605.12682) · `arXiv cs.AI`
+- 🔬 [CHAL: Council of Hierarchical Agentic Language](https://arxiv.org/abs/2605.12718) · `arXiv cs.AI`
 
 
 ---
@@ -88,9 +84,9 @@ CLI 形态贴近开发者日常终端工作流，便于把 Agent 接入现有流
 
 | 数据源 | 原始条目 | 过滤后 | AI 评分 | 精选 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 源 | 134 篇 | 47 篇 | 20 篇 | **10 篇** |
+| 11 源 | 138 篇 | 40 篇 | 20 篇 | **10 篇** |
 
-*生成于 2026-05-15 10:58 UTC+8*
+*生成于 2026-05-16 10:39 UTC+8*
 
 ## 📚 往期简报
 
