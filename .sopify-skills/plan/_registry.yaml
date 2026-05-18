@@ -1,0 +1,49 @@
+version: 1
+mode: "observe_only"
+selection_policy: "explicit_only"
+priority_policy: "heuristic_v1"
+priority_fallback: "p2"
+plans:
+  - plan_id: "20260424_feishu_webhook"
+    snapshot:
+      path: ".sopify-skills/plan/20260424_feishu_webhook"
+      title: "飞书 Webhook 机器人推送"
+      level: "standard"
+      topic_key: "feishu_webhook"
+      lifecycle_state: "done"
+      created_at: "2026-04-24T00:00:00+08:00"
+    governance:
+      priority: "p0"
+      priority_source: "manual"
+      priority_confirmed_at: "2026-04-24T00:00:00+08:00"
+      status: "done"
+      note: "已实现并上线运行"
+    meta:
+      source: "manual"
+      updated_at: "2026-04-24T00:00:00+08:00"
+
+  - plan_id: "20260517_cover_image_and_content_upgrade"
+    snapshot:
+      path: ".sopify-skills/plan/20260517_cover_image_and_content_upgrade"
+      title: "封面图 + 内容升级方案"
+      level: "standard"
+      topic_key: "cover_image_content_upgrade"
+      lifecycle_state: "designed"
+      created_at: "2026-05-17T12:44:00+08:00"
+    governance:
+      priority: null
+      priority_source: null
+      priority_confirmed_at: null
+      status: "designed"
+      note: "方案已设计；待用户确认后启动实施"
+    advice:
+      suggested_priority: "p1"
+      suggested_source: "heuristic_v1"
+      suggested_reason:
+        - "封面图是最大视觉提升点，直接影响飞书推送效果"
+        - "内容升级对标微信版，提升日报质量"
+        - "需要先创建飞书自建应用（Phase 2 前置）"
+      suggested_at: "2026-05-17T12:44:00+08:00"
+    meta:
+      source: "manual"
+      updated_at: "2026-05-17T12:44:00+08:00"
